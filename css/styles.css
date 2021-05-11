@@ -15,6 +15,10 @@
 
 /* inner */
 @import url('./catalog.css');
+@import url('./filter.css');
+
+/* navigation*/
+@import url('./pagination.css');
 
 /* carousel */
 @import url('./owl.carousel.min.css');

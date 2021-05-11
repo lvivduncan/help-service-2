@@ -1,0 +1,65 @@
+
+#filter{
+
+}
+
+#filter h1{
+    background: var(--bg-block);
+    padding: 20px 10px;
+    color: var(--dark);
+    position: relative;
+    font-weight: 600;
+    font-size: 22px;
+}
+
+#filter h1::after{
+    content: '';
+    display: block;
+    position: absolute;
+    top:0;
+    right: 0;
+    z-index: -1;
+    background: var(--bg-block);
+    width: 100vw;
+    height: 69px;
+}
+
+/* Обрані фільтри */
+#selected-tags{
+    margin: 30px 0;
+    padding: 0 10px;
+}
+
+#selected-tags h4{
+    font-size: 22px;
+    color: var(--green);
+    font-weight: 600;
+    margin: 0 0 10px;
+}
+
+#selected-tags span{
+    position: relative;
+    display: inline-block;
+    color: var(--gray-light)
+}
+ 
+#selected-tags span::after,
+#selected-tags span::before{
+    content: '';
+    display: inline-block;
+    position: absolute;
+    right: -15px;
+    top: calc(50% - 1px);
+    z-index: 1;
+    width: 10px;
+    height: 1px;
+    background: var(--gray-light);
+}
+
+#selected-tags span::after{
+    transform: rotate(130deg);
+}
+
+#selected-tags span::before{
+    transform: rotate(45deg);
+}

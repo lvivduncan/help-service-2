@@ -2,6 +2,12 @@
     margin: 70px 0;
 }
 
+/* каталог */
+#catalog .products{
+    margin: 20px 0;
+}
+/* каталог */
+
 /* назва блоку */
 .products h2{
     margin: 0 auto 30px;
@@ -15,10 +21,20 @@
     }    
 }
 
+/* головна сторінка -- по 4 */
 .products .wrapper{
     grid-template-columns: repeat(4,1fr);
     grid-gap: 30px;
 }
+
+
+/* каталог -- по 3 */
+#catalog .products .wrapper{
+    grid-template-columns: repeat(3,1fr);
+    width: auto;
+}
+/* каталог -- по 3 */
+
 
 .product{
     overflow: hidden;

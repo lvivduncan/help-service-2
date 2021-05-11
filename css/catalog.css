@@ -9,45 +9,78 @@
 
 /* теги і селект */
 #sort{
-    display: flex;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: end;
 }
 
 /* випадачка */
-#sort select{
+#sort select {
+    display: inline-block;
+    font-size: 16px;
+    font-family: inherit;
     margin-left: auto;
+    color: var(--dark);
+    background-color: var(--bg-block);
+    border: none;
+    padding: 7px 10px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23036838'%3E%3Cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 16px 16px;
+    border-radius: var(--radius);
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline: none;
     cursor: pointer;
+    position: relative;
+    top: -7px;
 }
 
+
 /* тег */
-#sort span{
+#tags span{
     padding: 5px 20px 5px 5px;
     border: 2px solid var(--green);
     border-radius: var(--radius);
     color: var(--dark);
     position: relative;
     display: inline-block;
-    margin-right: 5px;
+    margin: 0 5px 5px 0;
     cursor: pointer;
     user-select: none;
 }
 
-#sort span::after,
-#sort span::before{
+#tags span::after,
+#tags span::before{
     content: '';
     display: inline-block;
     position: absolute;
     right: 5px;
-    top: 50%;
+    top: calc(50% - 1px);
     z-index: 1;
     width: 10px;
     height: 1px;
     background: var(--gray);
 }
 
-#sort span::after{
+#tags span::after{
     transform: rotate(130deg);
 }
 
-#sort span::before{
+#tags span::before{
     transform: rotate(45deg);
+}
+
+/* кнопка очистки */
+#tags span:first-child{
+    border-color: var(--red);
+    color: var(--red);
+    padding: 5px;
+}
+
+#tags span:first-child::after,
+#tags span:first-child::before{
+    display: none;
 }

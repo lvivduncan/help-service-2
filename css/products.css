@@ -1,0 +1,211 @@
+.products{
+    margin: 70px 0;
+}
+
+/* назва блоку */
+.products h2{
+    margin: 0 auto 30px;
+    width: 1200px;
+    font-size: 36px;
+}
+
+@media(max-width:1240px) {
+    .products h2{
+        width: 95%;
+    }    
+}
+
+.products .wrapper{
+    grid-template-columns: repeat(4,1fr);
+    grid-gap: 30px;
+}
+
+.product{
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 
+        0 3px 1px -2px rgb(159 193 212 / 30%), 
+        0 2px 2px 0 rgb(159 193 212 / 24%), 
+        0 1px 5px 0 rgb(159 193 212 / 22%);
+    text-align: center;
+    display: flex;
+    flex-flow: column;
+    position: relative;
+}
+
+.product-marker{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 1;
+}
+
+.product-marker span{
+    display: inline-block;
+    padding: 5px 8px;
+    border-radius: 10px;
+    background: var(--orange);
+    color: var(--white);
+    font-size: 12px;
+}
+
+.product-marker span.cyan{
+    background: var(--cyan);
+}
+
+.product-image{
+    overflow: hidden;
+    height: 210px;
+}
+
+.product-image img{
+    transition: .5s;
+    transform: scale(1)
+}
+
+.product-image img:hover{
+    transform: scale(1.1)
+}
+
+/* є в наявності */
+.product p{
+    color: var(--green);
+    text-transform: uppercase;
+    font-size: 11px;
+    margin: 20px 0 0;
+    letter-spacing: 1px;
+    font-weight: 700;
+}
+
+/* немає в наявності */
+.product p.red{
+    color: var(--red);
+}
+
+/* закінчується */
+.product p.orange{
+    color: var(--orange);
+}
+
+.product-title{
+    margin: 20px;
+}
+
+.product-title a{
+    text-decoration: none;
+    color: var(--dark);
+    display: block;
+    line-height: 1.8;
+    font-weight: 500;
+    letter-spacing: .5px;
+    transition: .5s;
+}
+
+.product-title a:hover{
+    color: var(--green);
+    text-decoration: underline
+}
+
+.product-caption{
+    margin: auto 20px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.product-price{
+    font-size: 16px;
+    color: var(--dark);
+}
+
+.product-price span{
+    font-size: 12px;
+    text-decoration: line-through;
+    display: block;
+    text-align: left;
+    /* color: var(--green-ultralight); */
+    color: var(--red);
+}
+
+/* .product-button{} */
+
+.product-button button{
+    outline: none;
+    border: none;
+    background: var(--gradient);
+    color: var(--white);
+    padding: 8px 16px;
+    /* border-radius: 7px; */
+    /* border-radius: 18px; */
+    border-radius: var(--radius);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+.product-button button:hover{
+    background: var(--green);
+}
+
+.product-button button svg{
+    margin: 0 0 0 10px;
+    width: 18px;
+    height: 18px;
+
+    fill: none;
+    stroke: var(--white);
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+/* кнопка внизу */
+.products-button{
+    text-align: center;
+}
+
+/* кнопка */
+.products-button a{
+    margin: 30px 0 0;
+    display: inline-block;
+    padding: 15px 25px;
+    border-radius: var(--radius);
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    background: var(--white);
+    color: var(--gray-dark);
+    border: 2px solid var(--green);
+    padding: 14px 23px;
+}
+
+.products-button a:hover{
+    background: linear-gradient(90deg, rgba(238,238,238,1) 0%, rgba(255,255,255,1) 50%, rgba(238,238,238,1) 100%);
+}
+
+/* підвантаження */
+.products-button span{
+    margin: 30px 0 0;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    padding: 14px 23px;
+    color: var(--green);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+}
+
+.products-button span::after{
+    content: '';
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23036838' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E");
+    margin-left: 5px;
+}

@@ -1,0 +1,93 @@
+
+
+*,
+::after,
+::before{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --white: #fff;
+    --dark: #1a1a1a;
+
+    --green-superultralight: #f5faf6;
+    --green-ultralight: #88a092; /* риска в меню */
+    --green-light: #89a192;
+    --green: #036838;
+    --green-dark: #006837; /* іконки, півжирний заголовок, пункт меню */ /* 009245 */
+
+    --gray-ultralight: #f2f2f2; /* navbar, footer */
+    --gray-light: #808080; /* від 250 грн */
+    --gray: #4e4d4d;
+    --gray-dark: #333; /* текст */
+
+    --bg-block: #e1ede6; /* окремий блок з фоном, menubar */
+
+    --gradient: linear-gradient(90deg, #006837 0%, #009245 100%); /* градієнт для кнопки*/
+    /* --gradient-reverce: linear-gradient(90deg, #009245 0%, #006837 100%); */
+    --radius: 50px;
+
+    /* --purpur: #6359a7;  */
+    /* фіолетова кнопка */
+
+    --red: #d43d4d;
+    --orange: #ff931e;
+    --cyan: #2e3192;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    /* font-size: 14px; */
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--gray-dark);
+    position: static;
+    letter-spacing: 1px;
+}
+
+.wrapper{
+    width: 1200px;
+    margin: auto;
+    display: grid;
+}
+
+@media(max-width:1240px) {
+    .wrapper{
+        width: 95%;
+    }
+}
+
+a{
+    color: var(--green);
+    text-decoration: underline;
+}
+
+a:hover,
+a:focus{
+    text-decoration: none;
+}
+
+p{
+    line-height: 1.5;
+}
+
+input{
+    padding: 10px;
+    border: 1px solid var(--green);
+    border-radius: 20px;
+    outline: none;
+    width: 100%
+}
+
+input[type="search"]{
+    position: relative;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23036838'%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3Cpath d='M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right .75rem center;
+    background-size: 24px 24px;
+    padding: 16px 20px;
+    /* border-radius: 25px; */
+    border-radius: var(--radius);
+}

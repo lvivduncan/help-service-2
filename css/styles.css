@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,800;1,400;1,800&display=swap');
+
+@import url('./root.css');
+
+@import url('./header.css');
+
+@import url('./contact.css');
+
+/* basket вкладений у contact */
+@import url('./basket.css');
+
+@import url('./category.css');
+
+/* inner */
+@import url('./catalog.css');
+
+/* carousel */
+@import url('./owl.carousel.min.css');
+@import url('./slider.css');
+
+@import url('./animate.css');
+
+/* три переваги */
+@import url('./promo.css');
+
+/* карточки товарів -- модулі */
+@import url('./products.css');
+
+/* чому нам варто довіряти? */
+@import url('./trust.css');
+
+/* Як ми працюємо? */
+@import url('./work.css');
+
+/* Зв'яжіться з нами */
+@import url('./connect.css');
+
+@import url('./footer.css');

@@ -1,0 +1,42 @@
+#footer{
+    padding: 30px 0 10px;
+    background: var(--gray-ultralight);
+    font-size: 14px;
+}
+
+#footer .wrapper{
+    grid-template-columns: repeat(6,auto);
+    align-items: center;
+}
+
+/* діви -- тексти мають бути поцентровані */
+#footer .wrapper div{
+    text-align: center;
+}
+
+#footer ul,
+#footer li{
+    display: block;
+}
+
+#footer li{
+    margin: 2px 0;
+}
+
+#footer li a{
+    text-decoration: none;
+    color: var(--dark);
+}
+
+/* цопірайт */
+#copy{
+    width: 1200px;
+    margin: auto;
+    padding: 10px 0
+}
+
+@media(max-width: 1240px) {
+    #copy{
+        width: 95%;
+    }
+}

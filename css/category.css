@@ -1,0 +1,49 @@
+#category{
+    background: var(--bg-block);
+    padding: 35px 0;
+}
+
+#category .wrapper{
+    grid-template-columns: auto 1fr;
+    align-items: center;
+}
+
+/* button */
+#category span{
+    color: var(--green);
+    font-size: 22px;
+    display: flex;
+    align-items: center;
+}
+
+#category span svg{
+    margin: 0 0 0 5px;
+}
+
+#category ul{
+    display: grid;
+    grid-template-columns: repeat(8,auto);
+}
+
+#category li{
+    display: inline-block;
+    margin: 0 25px 0 0;
+    padding: 0 0 0 25px;
+    border-left: 1px solid var(--green-ultralight);
+    text-align: center;
+}
+
+#category li:first-child {
+    border: none;
+}
+
+#category li a{
+    color: var(--green);
+    font-size: 18px;
+    text-decoration: none;
+    transition: .5s;
+}
+
+#category li a:hover{
+    color: var(--dark);
+}

@@ -1,0 +1,19 @@
+
+#contact{
+    padding: 40px 0
+}
+
+#contact .wrapper{
+    align-items: center;
+    grid-template-columns: repeat(3,1fr) 1.5fr 0.5fr;
+    grid-gap: 20px;
+}
+
+#contact .wrapper div{
+    text-align: center;
+}
+
+#contact .wrapper p{
+    margin: 10px 0;
+    font-size: 14px;
+}

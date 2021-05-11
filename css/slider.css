@@ -1,0 +1,123 @@
+
+/* slider */
+#slider{
+    /* margin: 140px auto; */
+    margin: 70px auto;
+    display: block;
+}
+
+@media(max-width: 776px){
+    #slider{
+        margin: 40px auto;
+    }
+}
+
+#slider .item{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media(max-width:776px){
+    #slider .item{
+        flex-flow: column;
+    }
+}
+
+#slider .item-text{
+    width: 55%;
+}
+
+@media(max-width: 776px){
+    #slider .item-text{
+        width: 100%;
+    }
+}
+
+#slider .item-image{
+    width: 45%;
+}
+
+@media(max-width: 776px){
+    #slider .item-image{
+        width: 100%;
+        margin: 20px 0 0
+    }
+}
+
+#slider h3{
+    font-size: 40px;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin: 0 0 30px;
+}
+
+@media(max-width: 500px){
+    #slider h3{
+        font-size: 28px;
+        text-align: center;
+    }
+}
+
+#slider .item-desc{
+    font-size: 22px;
+    font-weight: 300;
+    margin: 0 0 70px;
+}
+
+@media(max-width: 500px){
+    #slider .item-desc{
+        font-size: 18px;
+        text-align: center;
+        margin: 0 0 40px;
+    }
+}
+
+#slider .item-buttons{
+    display: flex;
+    align-items: flex-start;
+    margin: 0 0 70px;
+}
+
+@media(max-width: 400px){
+    #slider .item-buttons{
+        flex-flow: column;
+        align-items: center;
+        margin: 0 0 40px;
+    }
+}
+
+#slider .item-buttons a{
+    margin: 0 30px 0 0;
+
+    display: inline-block;
+    padding: 15px 25px;
+    border-radius: var(--radius);
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    background: var(--white);
+    color: var(--gray-dark);
+    border: 2px solid var(--green);
+    padding: 14px 23px;
+}
+
+#slider .item-buttons a:hover{
+    background: linear-gradient(90deg, rgba(238,238,238,1) 0%, rgba(255,255,255,1) 50%, rgba(238,238,238,1) 100%);
+}
+
+@media(max-width: 400px){
+    #slider .item-buttons a{
+        margin: 0 0 20px;
+    }
+}
+
+#slider .item-buttons a:first-child{
+    background: var(--gradient);
+    color: var(--white);
+    /* font-size: 13px; */
+}
+
+#slider .item-buttons a:first-child:hover{
+    background: var(--gradient-reverce);
+}

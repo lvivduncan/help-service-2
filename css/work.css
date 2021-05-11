@@ -1,0 +1,45 @@
+#work{
+    background: var(--gray-ultralight);
+    padding: 60px 0;
+}
+
+#work h2{
+    text-align: center;
+    font-size: 36px;
+    margin: 0 0 30px;
+}
+
+#work .wrapper{
+    grid-template-columns: repeat(4,1fr);
+    grid-gap: 30px;
+}
+
+#work p{
+    position: relative;
+    margin: 0 0 60px;
+}
+
+#work p::after {
+    content: '';
+    border: solid var(--green);
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 10px;
+    width: 22px;
+    transform: rotate(-45deg);
+    position: absolute;
+    bottom: -40px;
+    right: 20px;
+}
+
+#work p::before{
+    content: '';
+    display: inline-block;
+    width: 100px;
+    height: 3px;
+    background: var(--green);
+
+    position: absolute;
+    bottom: -30px;
+    right: 20px;    
+}

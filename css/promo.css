@@ -1,0 +1,18 @@
+
+#promo{
+    margin: 60px 0
+}
+
+#promo .wrapper {
+    background: var(--gray-ultralight);
+    padding: 20px 50px;
+    border-radius: 15px;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 50px;
+}
+
+#promo h3{
+    font-weight: 500;
+    color: var(--green);
+    margin: 0 0 10px;
+}

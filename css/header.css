@@ -1,0 +1,28 @@
+
+#header{
+    background: var(--gray-ultralight);
+    padding: 20px 0
+}
+
+#header .wrapper{
+    grid-template-columns: auto 1fr;
+}
+
+#nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+#nav a {
+    color: var(--gray-dark);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 14px;
+    transition: .5s;
+}
+
+#nav a:hover{
+    color: var(--green);
+    text-shadow: 0 0 15px rgba(3, 104, 56, 0.25);
+}

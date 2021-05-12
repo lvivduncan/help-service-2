@@ -11,7 +11,8 @@
 /* basket вкладений у contact */
 @import url('./basket.css');
 
-@import url('./category.css');
+/* nav -- category */
+@import url('./list.css');
 
 /* inner */
 @import url('./catalog.css');
@@ -31,6 +32,9 @@
 
 /* карточки товарів -- модулі */
 @import url('./products.css');
+
+/* карточки з категоріями */
+@import url('./categories.css');
 
 /* чому нам варто довіряти? */
 @import url('./trust.css');

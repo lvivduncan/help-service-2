@@ -12,7 +12,7 @@
 .products h2{
     margin: 0 auto 30px;
     width: 1200px;
-    font-size: 36px;
+    /* font-size: 36px; */
 }
 
 @media(max-width:1240px) {
@@ -35,7 +35,7 @@
 }
 /* каталог -- по 3 */
 
-
+/* окрема позиція */
 .product{
     overflow: hidden;
     border-radius: 10px;
@@ -109,13 +109,14 @@
 
 .product-title{
     margin: 20px;
+    font-size: 16px;
 }
 
 .product-title a{
     text-decoration: none;
     color: var(--dark);
     display: block;
-    line-height: 1.8;
+    line-height: 1.6;
     font-weight: 500;
     letter-spacing: .5px;
     transition: .5s;

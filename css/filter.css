@@ -1,7 +1,5 @@
 
-#filter{
-
-}
+/* #filter{} */
 
 #filter h1{
     background: var(--bg-block);
@@ -54,6 +52,10 @@
 #filter label span{
     margin-left: auto;
     color: var(--gray-light);
+}
+
+#filter label:hover span{
+    color: var(--orange);
 }
 
 /* обгортка для ціни */

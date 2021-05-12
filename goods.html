@@ -71,10 +71,9 @@
         </div>
     </aside>
 
-    <nav id="category">
+    <nav id="list">
         <div class="wrapper">
-            <span>Каталог <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/></svg>
-            </span>
+            <span>Каталог</span>
             <ul>
                 <li><a href="">Ноутбуки</a></li>
                 <li><a href="">Монітори</a></li>
@@ -119,7 +118,7 @@
                 </div>
 
                 <div class="filter-price">
-                    від <input type="number"> до <input type="number">
+                    від <input type="number" value="1" min="1"> до <input type="number" value="9999" max="9999">
                 </div>
 
                 <div class="title">
@@ -162,11 +161,13 @@
             <div class="content">
                 <div id="sort">
                     <div id="tags">
+                        <!-- кнопка очистки -->
                         <span>Очистити</span>
+                        <!-- кнопка очистки -->
+
                         <span>Lenovo</span>
                         <span>Acer</span>
                         <span>Ціна від 100 до 1200</span>
-                        <!-- <span>China</span> -->
                         <span>Germany</span>                        
                     </div>
 
@@ -177,7 +178,6 @@
                         <option> Популярні </option>
                         <option> Новинки </option>
                         <option> Акційні </option>
-                        <option> За рейтингом </option>
                     </select>
 
                 </div>

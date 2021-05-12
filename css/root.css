@@ -26,7 +26,7 @@
     --bg-block: #e1ede6; /* окремий блок з фоном, menubar */
 
     --gradient: linear-gradient(90deg, #006837 0%, #009245 100%); /* градієнт для кнопки*/
-    /* --gradient-reverce: linear-gradient(90deg, #009245 0%, #006837 100%); */
+    --gradient-reverce: linear-gradient(90deg, #009245 0%, #006837 100%); /* градієнт для кнопки (hover) */
     --radius: 50px;
 
     /* --purpur: #6359a7;  */
@@ -90,4 +90,27 @@ input[type="search"]{
     padding: 16px 20px;
     /* border-radius: 25px; */
     border-radius: var(--radius);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+    /* font-weight: normal; */
+    font-weight: 500;
+}
+
+h2{
+    font-size: 32px;
+}
+
+h3{
+    /* font-size: 28px; */
+    font-size: 24px;
+}
+
+h4{
+    font-size: 18px
 }

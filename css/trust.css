@@ -5,7 +5,7 @@
 
 #trust h2{
     text-align: center;
-    font-size: 36px;
+    /* font-size: 36px; */
     margin: 0 0 30px;
 }
 
@@ -21,6 +21,8 @@
     margin: 0 0 10px;
 }
 
-#trust h3{
+#trust h3,
+#trust h4{
     margin: 0 0 10px;
+    color: var(--green);
 }

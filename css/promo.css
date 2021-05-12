@@ -11,7 +11,7 @@
     grid-gap: 50px;
 }
 
-#promo h3{
+#promo h4{
     font-weight: 500;
     color: var(--green);
     margin: 0 0 10px;

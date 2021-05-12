@@ -69,6 +69,10 @@
     background: var(--cyan);
 }
 
+.product-marker span.green{
+    background: var(--green);
+}
+
 .product-image{
     overflow: hidden;
     height: 210px;
@@ -161,6 +165,12 @@
     text-transform: uppercase;
 }
 
+.product-button button.disabled{
+    background: var(--gray-ultralight);
+    color: var(--dark);
+    pointer-events: none;
+}
+
 .product-button button:hover{
     background: var(--green);
 }
@@ -175,6 +185,10 @@
     stroke-width: 2;
     stroke-linecap: round;
     stroke-linejoin: round;
+}
+
+.product-button button.disabled svg{
+    stroke: var(--dark);
 }
 
 /* кнопка внизу */

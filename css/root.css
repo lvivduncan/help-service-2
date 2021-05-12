@@ -73,8 +73,7 @@ p{
     line-height: 1.5;
 }
 
-input{
-}
+input{}
 
 input[type="search"]{
     /* padding: 10px; */

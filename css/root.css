@@ -102,8 +102,14 @@ h6{
     font-weight: 500;
 }
 
+h1{
+    /* font-size: 34px; */
+    font-size: 30px;
+    line-height: 1.6;
+}
+
 h2{
-    font-size: 32px;
+    font-size: 30px;
 }
 
 h3{
@@ -113,4 +119,9 @@ h3{
 
 h4{
     font-size: 18px
+}
+
+img{
+    max-width: 100%!important;
+    height: auto!important;
 }

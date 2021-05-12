@@ -36,6 +36,9 @@
 /* карточки з категоріями */
 @import url('./categories.css');
 
+/* окремий товар */
+@import url('./item.css');
+
 /* чому нам варто довіряти? */
 @import url('./trust.css');
 

@@ -8,6 +8,7 @@
     position: relative;
     font-weight: 500;
     font-size: 22px;
+    line-height: 1;
 }
 
 #filter h1::after{
@@ -19,7 +20,7 @@
     z-index: -1;
     background: var(--bg-block);
     width: 100vw;
-    height: 69px;
+    height: 100%;
 }
 
 #filter .title{
@@ -80,7 +81,6 @@
   margin: 0;
 }
 
-/* Firefox */
-#filter .filter-price input[type=number] {
+#filter .filter-price input[type="number"] {
   -moz-appearance: textfield;
 }

@@ -1,6 +1,12 @@
 
+const $ = document.querySelector.bind(document);
+const $$ = document.querySelectorAll.bind(document);
+const log = console.log;
 
 
+// todo: слайдер і вкладки будуть vanilla JS!
+
+/*
 // слайдер на головній
 $('#carousel').owlCarousel({
     animateOut: 'slideOutDown',
@@ -29,4 +35,45 @@ $('#carousel').owlCarousel({
         });
     });
 })(jQuery);
+*/
 
+
+/**
+ * фото у товарі
+ */
+{
+    const fullImage = $('#item-image-full img');
+    const thumbs = $$('#item-thumbs img');
+
+    thumbs.forEach(thumb => {
+        thumb.addEventListener('click', (e) => {
+            e.preventDefault();
+            fullImage.src = thumb.src;
+        });
+    });
+}
+
+
+/**
+ * вкладки
+ */
+{
+    let tabs = $$('.tabs .tabs-caption li');
+    let panes = $$('.tabs .tabs-content');
+
+    tabs.forEach((item,i) => {
+
+        item.onclick = () => {
+            for(let tab of tabs){
+                tab.classList.remove('active'); 
+            }
+            item.classList.add('active');
+
+            for(let pane of panes){
+                pane.classList.remove('active');
+            }
+            panes[i].classList.add('active');
+        }
+
+    });
+}

@@ -5,13 +5,13 @@
     background: var(--bg-block);
     padding: 20px 10px;
     color: var(--dark);
-    position: relative;
+    /* position: relative; */
     font-weight: 500;
     font-size: 22px;
     line-height: 1;
 }
 
-#filter h1::after{
+/* #filter h1::after{
     content: '';
     display: block;
     position: absolute;
@@ -21,7 +21,7 @@
     background: var(--bg-block);
     width: 100vw;
     height: 100%;
-}
+} */
 
 #filter .title{
     background: var(--bg-block);
@@ -67,14 +67,14 @@
     gap: 5px;
 }
 
-#filter .filter-price input {
-    padding: 5px;
-    border: 1px solid var(--green);
+#filter .filter-price input{
+    padding: 7px 5px;
+    border: 2px solid var(--green);
     outline: none;
     width: auto;
     max-width: 120px;
 }
-
+s
 #filter .filter-price input::-webkit-outer-spin-button,
 #filter .filter-price input::-webkit-inner-spin-button {
   -webkit-appearance: none;

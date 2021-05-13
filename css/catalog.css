@@ -52,6 +52,11 @@
     user-select: none;
 }
 
+#tags span:hover{
+    border-color: var(--red);
+    color: var(--red);
+}
+
 #tags span::after,
 #tags span::before{
     content: '';
@@ -63,6 +68,11 @@
     width: 10px;
     height: 1px;
     background: var(--gray);
+}
+
+#tags span:hover::after,
+#tags span:hover::before{
+    background: var(--red)
 }
 
 #tags span::after{

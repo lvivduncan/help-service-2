@@ -1,0 +1,30 @@
+
+/* модальне вікно */
+#modal{
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 9;
+    background: rgba(0,0,0,0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#modal-inner{
+    width: 95%;
+    padding: 10px;
+    background: var(--white);
+    border-radius: var(--radius-15);
+}
+
+.modal-body-fixed{
+    overflow: hidden;
+    padding-right: 5px;
+}
+
+.display-none{
+    display: none;
+}

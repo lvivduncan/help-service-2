@@ -1,7 +1,6 @@
 
 /* slider */
 #slider{
-    /* margin: 140px auto; */
     margin: 70px auto;
     display: block;
 }
@@ -115,7 +114,6 @@
 #slider .item-buttons a:first-child{
     background: var(--gradient);
     color: var(--white);
-    /* font-size: 13px; */
 }
 
 #slider .item-buttons a:first-child:hover{

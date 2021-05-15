@@ -1,0 +1,161 @@
+
+/* modal basket */
+#modal-basket {
+    border-radius: var(--radius-15);
+    background: var(--white);
+    padding: 20px;
+    width: 1000px;
+    height: 580px;
+    position: absolute;
+    z-index: 10;
+    overflow: hidden;
+    top: calc(50% - 230px);
+    left: calc(50% - 500px);
+}
+
+/* 3 кроки */
+#modal-basket .steps{
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 30px;
+}
+
+#modal-basket .steps p{
+    position: relative;
+    margin: 0 0 30px;
+    padding: 0 0 10px;
+    border-bottom: 3px solid var(--gray-ultralight);
+    color: var(--gray-ultralight);
+    font-weight: 500;
+    font-size: 22px;
+}
+
+#modal-basket .steps p::before {
+    content: '';
+    border: solid var(--gray-ultralight);
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 10px;
+    width: 22px;
+    transform: rotate(-45deg);
+    position: absolute;
+    bottom: -13px;
+    right: 1px;
+}
+
+#modal-basket .steps p:first-child{
+    border-bottom-color: var(--green);
+    color: var(--green);
+}
+
+#modal-basket .steps p:first-child::before {
+    border-color: var(--green);
+}
+
+/* кількість товарів */
+#modal-basket-number{
+    margin: 10px 0 30px
+}
+
+/* товари */
+#modal-basket .products{
+    margin: 10px 0;
+    overflow-y: scroll;
+    height: 320px;
+}
+
+/* товар у кошикові */
+#modal-basket .product{
+    position: relative;
+    display: grid;
+    grid-gap: 20px 30px;
+    grid-template-columns: auto 1fr 100px;
+    grid-template-areas: 
+        'product-image product-label product-delete'
+        'product-image product-title product-delete'
+        'product-image product-caption product-delete';
+    box-shadow: none;
+    text-align: left;
+    border-radius: 0;
+    margin-bottom: 20px;
+}
+
+#modal-basket .product-image{
+    grid-area: product-image;
+
+    height: 180px;
+    width: 200px;    
+}
+
+#modal-basket .product-label{
+    grid-area: product-label;
+
+    margin: 0;
+}
+
+#modal-basket .product-title{
+    grid-area: product-title;
+
+    margin: 0;
+}
+
+#modal-basket .product-caption{
+    grid-area: product-caption;
+
+    margin: 0;
+    /* justify-content: flex-start; */
+}
+
+#modal-basket .product-delete{
+    grid-area: product-delete;
+}
+
+/* кнопки оформлення і загальна сума */
+#modal-buttons{
+    margin: 30px 0;
+    display: grid;
+    align-items: end;
+    grid-template-columns: auto 1fr auto;
+    grid-gap: 20px;
+    text-align: center;
+}
+
+#modal-buttons strong{
+    color: var(--green);
+}
+
+#modal-buttons button{
+    margin: 0 10px 0 0;
+    display: inline-block;
+    padding: 15px 25px;
+    border-radius: var(--radius);
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    background: var(--white);
+    color: var(--gray-dark);
+    border: 2px solid var(--green);
+    padding: 14px 23px;
+    cursor: pointer;
+}
+
+#modal-buttons button:hover{
+    background: linear-gradient(90deg, rgba(238,238,238,1) 0%, rgba(255,255,255,1) 50%, rgba(238,238,238,1) 100%);
+}
+
+#modal-buttons button:first-child{
+    background: var(--gradient);
+    color: var(--white);
+}
+
+#modal-buttons button:first-child:hover{
+    background: var(--gradient-reverce);
+}
+
+/* загальна сума */
+#modal-sum span{
+    display: inline-block;
+    padding: 0 0 10px;
+    border-bottom: 1px solid var(--green);
+}

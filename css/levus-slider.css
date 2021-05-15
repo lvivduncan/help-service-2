@@ -1,0 +1,314 @@
+
+/* /////////////////
+обгортка для слайдів
+///////////////// */
+#levus-slider {
+    margin-top: 60px;
+    margin-bottom: 60px;
+    height: 530px;
+    position: relative;
+    overflow: hidden;
+    background: var(--white);
+    border-radius: 15px;
+}
+
+/* ///
+слайд 
+/// */
+
+/* прихований по дефолту */
+#levus-slider .levus-slide {
+    background-size: cover !important;
+    background-position: center !important;
+    height: 530px;
+    width: 100%;
+    visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    -webkit-transition: background 2s;
+    transition: background 2s;
+}
+
+/* затемнення */
+#levus-slider .levus-slide::after {
+    content: '';
+    display: block;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.8);
+}
+
+/* активний слайд */
+#levus-slider .levus-slide.show {
+    visibility: visible;
+    -webkit-animation: background-show 3s linear forwards 0s;
+    animation: background-show 3s linear forwards 0s;
+}
+
+/* //////////////
+контент на слайді
+////////////// */
+
+.levus-content {
+    width: 1200px;
+    height: 530px;
+    padding: 100px 0;
+    margin: auto;
+    overflow: hidden;
+
+    position: relative;
+    z-index: 2;
+
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr auto 1fr;
+    grid-template-areas:
+        'levus-p1 levus-img'
+        'levus-p2 levus-img'
+        'levus-p3 levus-img'
+}
+
+@media(max-width: 1250px) {
+    .levus-content {
+        width: 95%;
+        padding: 10px;
+    }
+}
+
+@media(max-width: 991px) {
+    .levus-content {
+        text-align: center;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, auto);
+        grid-template-areas:
+        'levus-p1'
+        'levus-p2'
+        'levus-p3'
+        'levus-img'
+    }
+}
+
+/* ////////////
+блоки на слайді 
+//////////// */
+
+/* картинка знизу*/
+.levus-content img {
+    border-radius: 15px;
+    max-width: 100% !important;
+    height: auto !important;
+
+    grid-area: levus-img;
+
+    -webkit-transform: translateY(200%);
+    transform: translateY(200%);
+}
+
+@media(max-width: 991px) {
+    .levus-content img {
+        margin: auto;
+    }
+}
+
+/* 1 текст зліва */
+.levus-content p:nth-child(1) {
+    margin: 0 50px;
+    font-size: 40px;
+    font-weight: 600;
+    color: var(--green);
+    grid-area: levus-p1;
+    align-self: end;
+
+    -webkit-transform: scaleY(0);
+    transform: scaleY(0);
+}
+
+@media(max-width:776px) {
+    .levus-content p:nth-child(1) {
+        font-size: 26px;
+        line-height: 1;
+        margin: 0 10px;
+    }
+}
+
+/* 2 текст зліва */
+.levus-content p:nth-child(2) {
+    margin: 15px 50px 5px;
+    color: var(--dark);
+    grid-area: levus-p2;
+    align-self: start;
+
+    transform: translateX(-110%);
+}
+
+@media(max-width:776px) {
+    .levus-content p:nth-child(2) {
+        font-size: 16px;
+        margin: 0 10px;
+    }
+}
+
+/* 2 кнопки внизу */
+.levus-buttons{
+    margin: 15px 50px 5px;
+    color: var(--dark);
+    grid-area: levus-p3;
+    align-self: start;
+
+    opacity: 0;
+}
+
+@media(max-width:776px){
+    .levus-buttons {
+
+    }
+}
+
+
+/* ///////////////////
+блоки активного слайда
+/////////////////// */
+
+.show .levus-content img {
+    animation: img-0 1500ms linear forwards 1s;
+}
+
+.show .levus-content p:nth-child(1) {
+    animation: p-1 500ms linear forwards 1500ms;
+}
+
+.show .levus-content p:nth-child(2) {
+    animation: p-2 500ms linear forwards 2000ms;
+}
+
+.show .levus-content .levus-buttons {
+    animation: p-3 1500ms linear forwards 2500ms;
+}
+
+
+/* ///////////////////////
+стилі для активного слайда
+/////////////////////// */
+
+.levus-buttons a{
+    margin: 0 10px 0 0;
+
+    display: inline-block;
+    padding: 15px 25px;
+    border-radius: var(--radius);
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    background: var(--white);
+    color: var(--gray-dark);
+    border: 2px solid var(--green);
+    padding: 14px 23px;
+}
+
+.levus-buttons a:hover{
+    background: linear-gradient(90deg, rgba(238,238,238,1) 0%, rgba(255,255,255,1) 50%, rgba(238,238,238,1) 100%);
+}
+
+@media(max-width: 400px){
+    .levus-buttons a{
+        margin: 0 0 20px;
+    }
+}
+
+.levus-buttons a:first-child{
+    background: var(--gradient);
+    color: var(--white);
+}
+
+.levus-buttons a:first-child:hover{
+    background: var(--gradient-reverce);
+}
+
+
+/* /////////////
+анімація слайдів
+///////////// */
+
+/* анімація фону*/
+@-webkit-keyframes background-show {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {}
+}
+
+@keyframes background-show {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {}
+}
+
+/* анімація картинки */
+@keyframes img-0 {
+    0% {
+        transform: translateY(200%);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* анімація 1 параграфа*/
+@keyframes p-1 {
+    0% {
+        transform: scaleY(0);
+    }
+
+    50% {
+        transform: scaleY(-1);
+    }
+
+    100% {
+        transform: scaleY(1);
+    }
+}
+
+/* анімація 2 параграфа*/
+@keyframes p-2 {
+    0% {
+        transform: translateX(-110%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* анімація 3 параграфа*/
+@keyframes p-3 {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}

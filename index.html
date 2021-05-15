@@ -63,13 +63,141 @@
             </div>
 
             <div>
-                <a href="" id="basket">
+                <a href="#" id="basket">
                     <span>1</span>
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
                 </a>
             </div>
         </div>
     </aside>
+
+    <div id="modal-basket">
+        <div class="steps">
+            <p>Кошик</p>
+            <p>Оплата і доставка</p>
+            <p>Підтвердження</p>
+        </div>
+
+        <div id="modal-basket-number">
+            <strong>3</strong> товари
+        </div>
+
+        <div class="products">
+
+            <!-- id="product-id-1" -->
+            <article class="product">
+                <div class="product-marker">
+                    <span>Знижка</span>
+                    <span>-15%</span>
+                </div>
+
+                <a href="" class="product-image">
+                    <img src="temp/01.webp" alt="">
+                </a>
+
+                <div class="product-label orange">Закінчується</div>
+
+                <h4 class="product-title">
+                    <a href="">
+                        Ноутбук DREAM MACHINES Сlevo NP50DB (I7-10750H/DDR4 16Gb/SSD 480Gb/GTX 1650 4Gb)
+                    </a>                    
+                </h4>
+
+                <div class="product-caption">
+                    <div class="product-price">
+                        <span>3600 грн</span>
+                        <strong>3000</strong> грн
+                    </div>
+
+                    <div class="product-quantity">
+                        <button class="minus"></button>
+                        <input class="number" type="number" value="1">
+                        <button class="plus"></button>
+                    </div>
+                </div>
+
+                <div class="product-delete">
+                    <span class="product-button-delete"></span>
+                </div>
+            </article>
+
+            <!-- id="product-id-2" -->
+            <article class="product">
+                <a href="" class="product-image">
+                    <img src="temp/03.webp" alt="">
+                </a>
+
+                <div class="product-label">Є в наявності</div>
+
+                <h4 class="product-title">
+                    <a href="">
+                        Неттоп Б/В Lenovo ThinkCentre M710q USDT (i5-7400T / DDR4 8Gb / HDD 500Gb)
+                    </a>                    
+                </h4>
+
+                <div class="product-caption">
+                    <div class="product-price">
+                        <span>3600 грн</span>
+                        <strong>3000</strong> грн
+                    </div>
+
+                    <div class="product-quantity">
+                        <button class="minus"></button>
+                        <input class="number" type="number" value="1">
+                        <button class="plus"></button>
+                    </div>
+                </div>
+
+                <div class="product-delete">
+                    <span class="product-button-delete"></span>
+                </div>
+            </article>  
+
+            <!-- id="product-id-3" -->
+            <article class="product">
+                <a href="" class="product-image">
+                    <img src="temp/03.webp" alt="">
+                </a>
+
+                <div class="product-label">Є в наявності</div>
+
+                <h4 class="product-title">
+                    <a href="">
+                        Неттоп Б/В Lenovo ThinkCentre M710q USDT (i5-7400T / DDR4 8Gb / HDD 500Gb)
+                    </a>                    
+                </h4>
+
+                <div class="product-caption">
+                    <div class="product-price">
+                        <strong>3000</strong> грн
+                    </div>
+
+                    <div class="product-quantity">
+                        <button class="minus"></button>
+                        <input class="number" type="number" value="1">
+                        <button class="plus"></button>
+                    </div>
+                </div>
+
+                <div class="product-delete">
+                    <span class="product-button-delete"></span>
+                </div>
+            </article>  
+
+        </div>
+        <!-- .products -->
+
+        <div id="modal-buttons">
+            <button>Продовжити покупки</button>
+            <div id="modal-sum">
+                <span>
+                    Сума до оплати <strong>44 999</strong> грн
+                </span>
+            </div>
+            <button>Оформити замовлення</button>
+        </div>
+
+    </div>
 
     <nav id="list">
         <div class="wrapper">
@@ -86,53 +214,41 @@
         </div>
     </nav>
 
-    <div id="slider" class="wrapper">
-        <div id="carousel" class="owl-carousel">
+    <div id="levus-slider" class="wrapper">
+        <div class="levus-slide" style="background: url('temp/slide-1.jpg')">
+            <div class="levus-content">
+                <p>Lorem ipsum</p>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ad, numquam.</p>
+                <div class="levus-buttons">
+                    <a href="">Замовити ремонт</a>
+                    <a href="">Викликати майстра</a>                            
+                </div>
+                <img src="https://picsum.photos/id/1/480/355" alt="">
+            </div>
+        </div>
 
-            <article class="item">
-                <div class="item-text">
-                    <h3>Комп'ютерне обладнання під ключ</h3>
-                    <div class="item-desc">
-                        <p>Виконуємо професійний ремонт ноутбуків та нетбуків будь-якої складності</p>
-                    </div>
-                    <div class="item-buttons">
-                        <a href="">Замовити ремонт</a>
-                        <a href="">Викликати майстра</a>                            
-                    </div>
+        <div class="levus-slide" style="background: url('temp/slide-2.jpg')">
+            <div class="levus-content">
+                <p>Lorem ipsum</p>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ad, numquam.</p>
+                <div class="levus-buttons">
+                    <a href="">Замовити ремонт</a>
+                    <a href="">Викликати майстра</a>                            
                 </div>
-                <div class="item-image">
-                    <img src="temp/laptop.jpg" alt="">
-                </div>
-            </article>
+                <img src="https://picsum.photos/id/2/480/355" alt="">
+            </div>
+        </div>
 
-            <article class="item">
-                <div class="item-text">
-                    <h3>Ремонт ноутбуків у Львові</h3>
-                    <div class="item-desc">Виконуємо професійний ремонт ноутбуків та нетбуків будь-якої складності</div>
-                    <div class="item-buttons">
-                        <a href="">Замовити ремонт</a>
-                        <a href="">Викликати майстра</a>                            
-                    </div>
+        <div class="levus-slide" style="background: url('temp/slide-3.jpg')">
+            <div class="levus-content">
+                <p>Lorem ipsum</p>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ad, numquam.</p>
+                <div class="levus-buttons">
+                    <a href="">Замовити ремонт</a>
+                    <a href="">Викликати майстра</a>                            
                 </div>
-                <div class="item-image">
-                    <img src="temp/laptop.jpg" alt="">
-                </div>
-            </article>
-
-            <article class="item">
-                <div class="item-text">
-                    <h3>Ремонт ноутбуків у Львові</h3>
-                    <div class="item-desc">Виконуємо професійний ремонт ноутбуків та нетбуків будь-якої складності</div>
-                    <div class="item-buttons">
-                        <a href="">Замовити ремонт</a>
-                        <a href="">Викликати майстра</a>                            
-                    </div>
-                </div>
-                <div class="item-image">
-                    <img src="temp/laptop.jpg" alt="">
-                </div>
-            </article>
-
+                <img src="https://picsum.photos/id/3/480/355" alt="">
+            </div>
         </div>
     </div>
     <!-- #slider -->
@@ -683,8 +799,8 @@
         </div>
     </footer>
 
-    <script src="js/jquery-3.6.0.slim.min.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/glightbox.min.js"></script>
     <script src="js/script.js"></script>
+
 </body>
 </html>

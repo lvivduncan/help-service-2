@@ -1,0 +1,125 @@
+.levus-horizontal-scroll {
+    overflow: hidden;
+    /* padding-top: 50px; */
+    position: relative;
+}
+
+.levus-horizontal-scroll ul {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(20,25%);
+    left: -25%;
+}
+
+@media (max-width: 996px) {
+    .levus-horizontal-scroll ul {
+        left: -33.333333%;
+        grid-template-columns: repeat(20,33.333333%);
+    }
+}
+
+@media (max-width: 776px) {
+    .levus-horizontal-scroll ul {
+        left: -50%;
+        grid-template-columns: repeat(20,50%);
+    }
+}
+
+@media (max-width: 500px) {
+    .levus-horizontal-scroll ul {
+        left: -100%;
+        grid-template-columns: repeat(20,100%);
+    }
+}
+
+.to-left {
+    transform: translateX(25%);
+}
+
+.to-right {
+    transform: translateX(-25%);
+}
+
+@media (max-width: 996px) {
+    .to-left {
+        transform: translateX(33.333333%);
+    }
+    .to-right {
+        transform: translateX(-33.333333%);
+    }
+}
+
+@media (max-width: 776px) {
+    .to-left {
+        transform: translate(50%);
+    }
+    .to-right {
+        transform: translate(-50%);
+    }
+}
+
+@media (max-width: 500px) {
+    .to-left {
+        transform: translateX(100%);
+    }
+    .to-right {
+        transform: translateX(-100%);
+    }
+}
+
+.levus-horizontal-scroll li{
+    display: block;
+    border: 20px solid var(--white);
+}
+
+.levus-horizontal-scroll img {
+    width: 100%;
+    display: block;
+}
+
+/* left/right arrows */
+.levus-horizontal-scroll .levus-nav{
+    position: absolute;
+    top: calc(50% - 20px);
+    left: 0;
+    width: 100%
+}
+
+.levus-horizontal-scroll .left,
+.levus-horizontal-scroll .right {
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+
+    position: absolute;
+    top: 0;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.levus-horizontal-scroll .left {
+    left: 10px;
+}
+
+.levus-horizontal-scroll .right {
+    right: 10px;
+}
+
+.levus-horizontal-scroll .left::before,
+.levus-horizontal-scroll .right::before{
+    content: '';
+    display: block;
+    width: 40px;
+    height: 40px;
+
+    border-radius: var(--radius);
+    background: var(--white);    
+}
+
+.levus-horizontal-scroll .left::before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23036838' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z'/%3E%3C/svg%3E");
+}
+
+.levus-horizontal-scroll .right::before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23036838' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z'/%3E%3C/svg%3E");
+}

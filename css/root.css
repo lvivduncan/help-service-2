@@ -28,6 +28,7 @@
     --gradient: linear-gradient(90deg, #006837 0%, #009245 100%); /* градієнт для кнопки*/
     --gradient-reverce: linear-gradient(90deg, #009245 0%, #006837 100%); /* градієнт для кнопки (hover) */
     --radius: 50px;
+    --radius-15: 15px;
 
     /* --purpur: #6359a7;  */
     /* фіолетова кнопка */

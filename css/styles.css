@@ -11,6 +11,11 @@
 /* basket вкладений у contact */
 @import url('./basket.css');
 
+/* модальний кошик */
+@import url('./modal-basket.css'); /* del? */
+
+@import url('./modal.css');
+
 /* nav -- category */
 @import url('./list.css');
 
@@ -22,8 +27,9 @@
 @import url('./pagination.css');
 
 /* carousel */
-@import url('./owl.carousel.min.css');
-@import url('./slider.css');
+/* @import url('./owl.carousel.min.css'); */
+/* @import url('./slider.css'); */
+@import url('./levus-slider.css');
 
 @import url('./animate.css');
 
@@ -38,6 +44,11 @@
 
 /* окремий товар */
 @import url('./item.css');
+
+@import url('./levus-horizontal-scroll.css');
+
+/* лайтбокс */
+@import url('./glightbox.min.css');
 
 /* чому нам варто довіряти? */
 @import url('./trust.css');

@@ -245,8 +245,14 @@
                     Ціна
                 </div>
 
-                <div class="filter-price">
-                    від <input type="number" value="1" min="1"> до <input type="number" value="9999" max="9999">
+                <div id="filter-price">
+                    від <input type="number" value="1" min="1" id="filter-price-min"> 
+                    до <input type="number" value="9999" max="9999" id="filter-price-max">
+                </div>
+
+                <div id="filter-range">
+                    <input type="range" id="filter-range-left" min="1" max="9999" value="1">
+                    <input type="range" id="filter-range-right" min="1" max="9999" value="9999">
                 </div>
 
                 <div class="title">

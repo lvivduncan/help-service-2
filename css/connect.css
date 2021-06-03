@@ -4,8 +4,7 @@
     background-image: url('../temp/connect.png');
     background-position: right center;
     background-repeat: no-repeat;
-    background-size: 500px 281px; /* 1000-563 */
-    /* min-height: 560px; */
+    background-size: 500px 281px;
     min-height: 400px;
     display: flex;
     align-items: center;
@@ -16,7 +15,6 @@
 }
 
 #connect h3{
-    /* font-size: 28px; */
     margin: 0 0 30px;
 }
 
@@ -28,4 +26,14 @@
     display: inline-block;
     font-size: 28px;
     padding-right: 20px
+}
+
+@media(max-width:996px) {
+    #connect{
+        background-image: none;
+    }
+
+    #connect .wrapper {
+        padding: 0;
+    }
 }

@@ -26,3 +26,14 @@
     margin: 0 0 10px;
     color: var(--green);
 }
+
+@media(max-width:540px) {
+    #trust .wrapper{
+        grid-template-columns: 1fr;
+        grid-gap: 40px;
+    }
+
+    #trust article{
+        text-align: center;
+    }
+}

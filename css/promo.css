@@ -16,3 +16,10 @@
     color: var(--green);
     margin: 0 0 10px;
 }
+
+@media(max-width:776px) {
+    #promo .wrapper{
+        grid-template-columns: 1fr;
+        grid-gap: 20px;
+    }
+}

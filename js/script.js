@@ -145,7 +145,7 @@ const lightboxDescription = GLightbox({
  * modal
  */
 {
-    const basket = document.getElementById('basket');
+    // const basket = document.getElementById('basket');
     const modalBasket = document.getElementById('modal-basket');
 
     modalBasket.className = 'display-none';
@@ -153,7 +153,7 @@ const lightboxDescription = GLightbox({
     // create modal window
     const modal = document.createElement('div');
     modal.setAttribute('id', 'modal');
-    
+    /* 
     basket.addEventListener('click', e => {
         e.preventDefault();
         
@@ -165,9 +165,21 @@ const lightboxDescription = GLightbox({
         modalBasket.className = '';
         
     });
+ */
+
 
     document.addEventListener('click', e => {
-        // e.preventDefault();
+        if(e.target.id === 'basket'){
+
+            e.preventDefault();
+        
+            // add modal
+            document.body.className = 'modal-body-fixed';
+            document.body.append(modal);
+    
+            // show mobile basket
+            modalBasket.className = '';
+        }
 
         if(e.target.id == 'modal'){
 
@@ -182,7 +194,7 @@ const lightboxDescription = GLightbox({
 
 
 /**
- * plus, minus, delete, quantity and other
+ * plus, minus, delete, quantity and other (basket)
  */
 {
     // mobile basket
@@ -236,3 +248,88 @@ const lightboxDescription = GLightbox({
     });
 
 }
+
+
+/**
+ * filter-range and filter-price
+ */
+{
+    if(document.getElementById('filter-price') != null){
+        // ліве поле (мінімум)
+        const min = document.getElementById('filter-price-min');
+
+        // праве поле (максимум)
+        const max = document.getElementById('filter-price-max');
+
+        // лівий бігунок
+        const left = document.getElementById('filter-range-left');
+
+        // правий бігунок
+        const right = document.getElementById('filter-range-right');
+
+        // move range
+        left.addEventListener('input', () => {
+            min.value = left.value;
+        });
+
+        right.addEventListener('input', () => {
+            max.value = right.value;
+        });
+
+        // change numbers
+        min.addEventListener('change', () => {
+            left.value = min.value;
+        });
+
+        max.addEventListener('change', () => {
+            right.value = max.value;
+        });  
+    }
+}
+
+/**
+ * mobile header
+ */
+
+{
+    // місце, де все відбувається
+    const header = document.querySelector('#header .wrapper');
+
+    const basket = document.getElementById('basket').cloneNode(true);
+    const search = document.getElementById('search').cloneNode(true);
+
+        const button = document.createElement('div');
+        button.setAttribute('id', 'mobile-button');
+
+
+    window.addEventListener('resize', function() {
+        requestAnimationFrame(changeHeader);
+        
+    });
+
+    changeHeader();
+
+
+
+    // при зменшенні екрану у хедері мають вставитися 3 елементи замість попередніх двох
+    // мобільна кнопка має бути згенерована
+    function changeHeader(){
+
+        if(window.innerWidth < 1240){
+
+            header.append(button);
+            header.append(basket);
+            header.append(search);
+
+        } else if(window.innerWidth > 1240){
+
+            button.remove();
+            basket.remove();
+            search.remove();
+        }
+    }
+}
+/* 
+document.addEventListener('click', e => {
+    console.log(e.target)
+}); */

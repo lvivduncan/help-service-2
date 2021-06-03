@@ -38,5 +38,41 @@
 @media(max-width: 1240px) {
     #copy{
         width: 95%;
+        text-align: center;
+    }
+}
+
+@media(max-width:996px) {
+    #footer .wrapper{
+        grid-template-columns: repeat(3,auto);
+        justify-content: center;
+        grid-gap: 25px;
+    }
+
+    #footer ul,
+    #footer li {
+        text-align: center;
+    }
+}
+
+@media(max-width:540px) {
+    #footer .wrapper{
+        grid-template-columns: repeat(2,auto);
+        grid-gap: 15px;
+    }
+
+    #footer svg{
+        display: block;
+        margin: auto;
+    }
+
+    #copy{
+        padding: 20px 0 10px;
+    }
+}
+
+@media(max-width:420px) {
+    #footer .wrapper{
+        grid-template-columns: 1fr;
     }
 }

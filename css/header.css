@@ -26,3 +26,35 @@
     color: var(--green);
     text-shadow: 0 0 15px rgba(3, 104, 56, 0.25);
 }
+
+/* на мобільному додаємо кошик справа */
+@media(max-width:1240px) {
+    #header .wrapper{
+        grid-template-columns: 1fr 2fr 1fr;
+        align-items: center;
+    }
+
+    #nav,
+    #logo{
+        display: none;
+    }
+
+    #mobile-button{
+        order:1;
+        margin-right: auto;
+        width: 48px;
+        height: 20px;
+        cursor: pointer;
+
+        background-image: url("data:image/svg+xml,%3Csvg width='48' height='20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg%3E%3Ctitle%3ELayer 1%3C/title%3E%3Cline stroke-width='4' stroke='%23006837' fill='none' x1='1' y1='2' x2='47' y2='2'/%3E%3Cline stroke-width='4' stroke='%23006837' fill='none' x1='1' y1='10' x2='47' y2='10'/%3E%3Cline stroke-width='4' stroke='%23006837' fill='none' x1='1' y1='18' x2='47' y2='18'/%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    #header #search{
+        order: 2;
+    }
+
+    #header #basket{
+        order: 3;
+        margin-left: auto;
+    }
+}

@@ -5,23 +5,10 @@
     background: var(--bg-block);
     padding: 20px 10px;
     color: var(--dark);
-    /* position: relative; */
     font-weight: 500;
     font-size: 22px;
     line-height: 1;
 }
-
-/* #filter h1::after{
-    content: '';
-    display: block;
-    position: absolute;
-    top:0;
-    right: 0;
-    z-index: -1;
-    background: var(--bg-block);
-    width: 100vw;
-    height: 100%;
-} */
 
 #filter .title{
     background: var(--bg-block);
@@ -53,6 +40,7 @@
 #filter label span{
     margin-left: auto;
     color: var(--gray-light);
+    padding-right: 5px;
 }
 
 #filter label:hover span{
@@ -60,14 +48,15 @@
 }
 
 /* обгортка для ціни */
-#filter .filter-price{
-    margin: 0 0 50px;
+#filter-price{
+    /* margin: 0 0 50px; */
+    margin: 0 0 20px;
     display: flex;
     align-items: center;
     gap: 5px;
 }
 
-#filter .filter-price input{
+#filter-price input{
     padding: 7px 5px;
     border: 2px solid var(--green);
     outline: none;
@@ -75,12 +64,155 @@
     max-width: 120px;
 }
 
-#filter .filter-price input::-webkit-outer-spin-button,
-#filter .filter-price input::-webkit-inner-spin-button {
+#filter-price input::-webkit-outer-spin-button,
+#filter-price input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-#filter .filter-price input[type="number"] {
+#filter-price input[type="number"] {
   -moz-appearance: textfield;
+}
+
+/* /////
+бігунки
+///// */
+#filter-range{
+    margin: 0 0 50px;
+}
+
+#filter-range input[type="range"]{
+    width: 100%;
+}   
+
+#filter-range input[type="range"] {
+    display: block;
+    height: 2em;
+    margin: 0;
+    pointer-events: none;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+#filter-range input[type="range"] + input[type="range"] {
+    margin-top: -2em;
+}
+
+#filter-range input[type="range"]:focus {
+    outline: none;
+}
+
+/* webkit */
+#filter-range input[type=range]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 2px;
+    cursor: pointer;
+    background: var(--gray);
+}
+
+#filter-range input[type=range]::-webkit-slider-thumb {
+    border: 2px solid var(--orange);
+    height: 32px;
+    width: 32px;
+    border-radius: 32px;
+    background: var(--gray-ultralight);
+    cursor: pointer;
+    -webkit-appearance: none;
+    appearance: none;
+    margin-top: -14px;
+    pointer-events: all;
+    position: relative;
+}
+
+#filter-range input[type=range]::-webkit-slider-thumb::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 32px;
+    width: 32px;
+    border-radius: 32px;
+    z-index: 1;
+}
+
+#filter-range input[type=range]:focus::-webkit-slider-runnable-track {
+    background: var(--gray);
+}
+
+/* moz */
+#filter-range input[type=range]::-moz-range-track {
+    width: 100%;
+    height: 2px;
+    cursor: pointer;
+    background: var(--gray);
+}
+
+#filter-range input[type=range]::-moz-range-thumb {
+    border: 2px solid var(--orange);
+    height: 32px;
+    width: 32px;
+    border-radius: 32px;
+    background: var(--gray-ultralight);
+    cursor: pointer;
+    pointer-events: all;
+    position: relative;
+}
+
+#filter-range input[type=range]::-moz-range-thumb::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 32px;
+    width: 32px;
+    border-radius: 32px;
+    z-index: 1;
+}
+
+/* ie */
+#filter-range input[type=range]::-ms-track {
+    width: 100%;
+    height: 2px;
+    cursor: pointer;
+    background: transparent;
+    border-color: transparent;
+    color: transparent;
+}
+
+#filter-range input[type=range]::-ms-fill-lower {
+    background: var(--gray);
+}
+
+#filter-range input[type=range]::-ms-fill-upper {
+    background: var(--gray);
+}
+
+#filter-range input[type=range]::-ms-thumb {
+    border: 2px solid var(--orange);
+    height: 32px;
+    width: 32px;
+    border-radius: 32px;
+    background: var(--gray-ultralight);
+    cursor: pointer;
+    pointer-events: all;
+    position: relative;
+}
+
+#filter-range input[type=range]::-ms-thumb::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 32px;
+    width: 32px;
+    border-radius: 32px;
+    z-index: 1;
+}
+
+#filter-range input[type=range]:focus::-ms-fill-lower {
+    background: var(--gray-ultralight);
+}
+
+#filter-range input[type=range]:focus::-ms-fill-upper {
+    background: var(--gray-ultralight);
 }

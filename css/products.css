@@ -80,7 +80,10 @@
 
 .product-image img{
     transition: .5s;
-    transform: scale(1)
+    transform: scale(1);
+
+    object-fit: cover;
+    width: 100%;
 }
 
 .product-image img:hover{
@@ -337,4 +340,22 @@
     height: 24px;
     text-decoration: none;
     cursor: pointer;
+}
+
+@media(max-width:996px) {
+    .products .wrapper {
+        grid-template-columns: repeat(3,1fr);
+    }
+}
+
+@media(max-width:776px) {
+    .products .wrapper {
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+@media(max-width:540px) {
+    .products .wrapper {
+        grid-template-columns: 1fr;
+    }
 }

@@ -49,3 +49,9 @@
 #list li a:hover{
     color: var(--dark);
 }
+
+@media(max-width:1240px) {
+    #list{
+        display: none;
+    }
+}

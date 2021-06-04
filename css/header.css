@@ -29,6 +29,20 @@
 
 /* на мобільному додаємо кошик справа */
 @media(max-width:1240px) {
+
+    #header{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 93px;
+        z-index: 10;
+    }
+
+    #header-spacer{
+        height: 93px;
+    }
+
     #header .wrapper{
         grid-template-columns: 1fr 2fr 1fr;
         align-items: center;

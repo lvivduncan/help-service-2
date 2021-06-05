@@ -152,22 +152,12 @@ const lightboxDescription = GLightbox({
 
     // create modal window
     const modal = document.createElement('div');
-    modal.setAttribute('id', 'modal');
-    /* 
-    basket.addEventListener('click', e => {
-        e.preventDefault();
-        
-        // add modal
-        document.body.className = 'modal-body-fixed';
-        document.body.append(modal);
+    modal.setAttribute('id', 'modal-wrapper');
 
-        // show mobile basket
-        modalBasket.className = '';
-        
-    });
- */
+    const close = document.createElement('div');
+    close.setAttribute('id', 'modal-button-close');
 
-
+    // open-close
     document.addEventListener('click', e => {        
         if(e.target.id === 'basket' || e.target.id === 'basket-sum'){
             e.preventDefault();
@@ -176,19 +166,36 @@ const lightboxDescription = GLightbox({
             document.body.className = 'modal-body-fixed';
             document.body.append(modal);
     
+            // close button
+            modalBasket.append(close);
+
             // show mobile basket
             modalBasket.className = '';
         }
 
-        if(e.target.id == 'modal'){
+        if(e.target.id == 'modal-wrapper' || e.target.id === 'modal-button-close'){
 
-            // clear
+            // clear and close modal
             document.body.className = '';
             modal.remove();
+            close.remove();
             modalBasket.className = 'display-none';
 
         }
     });
+
+    // close 'esc'
+    document.addEventListener('keydown', e => {
+        if(e.code === 'Escape' || e.key === 'Escape'){
+
+            // clear and close modal
+            document.body.className = '';
+            modal.remove();
+            modalBasket.className = 'display-none';
+        }
+    });
+
+    // todo: add touch events?
 }
 
 

@@ -6,7 +6,7 @@
     padding: 20px;
     width: 1000px;
     height: 580px;
-    position: absolute;
+    position: fixed;
     z-index: 10;
     overflow: hidden;
     top: calc(50% - 230px);
@@ -14,43 +14,94 @@
 }
 
 /* 3 кроки */
-#modal-basket .steps{
+.steps{
     position: relative;
     display: grid;
     grid-template-columns: repeat(3,1fr);
     grid-gap: 30px;
 }
 
-#modal-basket .steps p{
-    position: relative;
-    margin: 0 0 30px;
-    padding: 0 0 10px;
-    border-bottom: 3px solid var(--gray-ultralight);
-    color: var(--gray-ultralight);
-    font-weight: 500;
-    font-size: 22px;
+#modal-basket .steps{
+    width: calc(100% - 160px);
 }
 
-#modal-basket .steps p::before {
+@media(max-width:776px) {
+    #modal-basket .steps{
+        align-items: center;
+    }    
+}
+
+@media(max-width:540px) {
+    #modal-basket .steps{
+        grid-template-columns: 1fr;
+        grid-gap: 10px;
+        width: calc(100% - 60px);
+    }    
+}
+
+.steps p{
+    position: relative;
+    margin: 0 0 20px;
+    border-bottom: 3px solid var(--gray-ultralight);
+    color: var(--gray-ultralight);
+    font-size: 16px;
+}
+
+@media(max-width:776px) {
+    .steps p{
+        border: none;
+        display: grid;
+        /* grid-template-columns: repeat(2,auto); */
+        grid-template-columns: 1fr auto;
+        align-items: center;
+    } 
+}
+
+@media(max-width:540px) {
+    .steps p{
+        margin: 0;
+    } 
+}
+
+.steps p::after {
     content: '';
     border: solid var(--gray-ultralight);
     border-width: 0 3px 3px 0;
     display: inline-block;
     padding: 10px;
     width: 22px;
+    height: 22px;
     transform: rotate(-45deg);
     position: absolute;
     bottom: -13px;
     right: 1px;
 }
 
-#modal-basket .steps p:first-child{
+@media(max-width:776px) {
+    .steps p::after {
+        position: static;
+        /* height: 22px; */
+    }
+}
+
+.steps p.active{
     border-bottom-color: var(--green);
     color: var(--green);
 }
 
-#modal-basket .steps p:first-child::before {
+.steps p.active::after {
     border-color: var(--green);
+}
+
+/* кнопка закриття */
+#modal-button-close {
+    position: absolute;
+    top: 13px;
+    right: 13px;
+    width: 30px;
+    height: 30px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23036838' viewBox='0 0 16 16'%3E%3Cpath d='M1.293 1.293a1 1 0 0 1 1.414 0L8 6.586l5.293-5.293a1 1 0 1 1 1.414 1.414L9.414 8l5.293 5.293a1 1 0 0 1-1.414 1.414L8 9.414l-5.293 5.293a1 1 0 0 1-1.414-1.414L6.586 8 1.293 2.707a1 1 0 0 1 0-1.414z'/%3E%3C/svg%3E");
+    cursor: pointer;
 }
 
 /* кількість товарів */
@@ -81,11 +132,58 @@
     margin-bottom: 20px;
 }
 
+@media(max-width:776px) {
+    #modal-basket .product{
+        grid-template-columns: 1fr 2fr 50px;
+        grid-template-areas: 
+            'product-image product-label product-label'
+            'product-image product-title product-title'
+            'product-caption product-caption product-delete';
+        grid-gap: 0 10px;
+    }
+}
+
+@media(max-width:400px) {
+    #modal-basket .product{
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            'product-image'
+            'product-label'
+            'product-title'
+            'product-caption';
+        grid-gap: 10px;
+    }
+}
+
 #modal-basket .product-image{
     grid-area: product-image;
 
     height: 180px;
     width: 200px;    
+}
+
+@media(max-width:776px) {
+    #modal-basket .product-image{
+        height: auto;
+    }    
+}
+
+@media(max-width:450px) {
+    #modal-basket .product-image{
+        width: 120px;
+    }
+    #modal-basket .product-marker{
+        width: 120px;
+    }
+}
+
+@media(max-width:400px) {
+    #modal-basket .product-image{
+        width: 100%;
+    }
+    #modal-basket .product-marker{
+        width: calc(100% - 40px);
+    }
 }
 
 #modal-basket .product-label{
@@ -104,11 +202,37 @@
     grid-area: product-caption;
 
     margin: 0;
-    /* justify-content: flex-start; */
+}
+
+@media(max-width:776px) {
+    #modal-basket .product-caption{
+        justify-content: space-around;
+        text-align: left;
+    }
+}
+
+@media(max-width:400px) {
+    #modal-basket .product-quantity {
+        margin: 0;
+    }
 }
 
 #modal-basket .product-delete{
     grid-area: product-delete;
+}
+
+@media(max-width:400px){
+    #modal-basket .product-delete{
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 1;
+        background: var(--red);
+    }
+
+    #modal-basket .product-delete span{
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23ffffff' viewBox='0 0 16 16'%3E%3Cpath d='M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z'/%3E%3Cpath fill-rule='evenodd' d='M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z'/%3E%3C/svg%3E");
+    }
 }
 
 /* кнопки оформлення і загальна сума */
@@ -119,6 +243,12 @@
     grid-template-columns: auto 1fr auto;
     grid-gap: 20px;
     text-align: center;
+}
+
+@media(max-width:776px) {
+    #modal-buttons{
+        grid-template-columns: 1fr;
+    }    
 }
 
 #modal-buttons strong{
@@ -158,4 +288,21 @@
     display: inline-block;
     padding: 0 0 10px;
     border-bottom: 1px solid var(--green);
+}
+
+@media(max-width:1240px) {
+    #modal-basket {
+        width: 95%;
+        min-height: 580px;
+        top: calc(50% - 230px);
+        left: 2.5%;
+    }
+}
+
+@media(max-width:776px) {
+    #modal-basket {
+        height: calc(100vh - 100px);
+        top: 100px;
+        overflow-y: scroll;
+    }
 }

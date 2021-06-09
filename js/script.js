@@ -1,7 +1,5 @@
 'use strict';
 
-const log = console.log;
-
 /**
  * вкладки
  */
@@ -296,7 +294,7 @@ const lightboxDescription = GLightbox({
 /**
  * mobile header
  */
-
+/* 
 {
     // місце, де все відбувається
     const header = document.querySelector('#header .wrapper');
@@ -307,6 +305,8 @@ const lightboxDescription = GLightbox({
     const button = document.createElement('div');
     button.setAttribute('id', 'mobile-button');
 
+    const body = document.querySelector('body');
+
     const spacer = document.createElement('div');
     spacer.setAttribute('id', 'header-spacer');
 
@@ -316,8 +316,6 @@ const lightboxDescription = GLightbox({
     });
 
     changeHeader();
-
-
 
     // при зменшенні екрану у хедері мають вставитися 3 елементи замість попередніх двох
     // мобільна кнопка має бути згенерована
@@ -330,7 +328,9 @@ const lightboxDescription = GLightbox({
             header.append(basket);
             header.append(search);
 
-        } else if(window.innerWidth > 1240){
+        }
+        
+        if(window.innerWidth > 1240){
 
             spacer.remove();
             button.remove();
@@ -339,7 +339,7 @@ const lightboxDescription = GLightbox({
         }
     }
 }
-
+ */
 // to up
 {
     const levusUp = document.createElement('div');
@@ -366,3 +366,173 @@ const lightboxDescription = GLightbox({
         });
     });
 }
+
+/**
+ * desktop menu catalog fixed
+ */
+/* 
+{
+    const body = document.querySelector('body');
+    const list = document.getElementById('list');
+    const listOffsetTop = list.getBoundingClientRect().top;
+
+    // const spacer = document.createElement('div');
+    // spacer.setAttribute('id', 'header-spacer');
+    
+    window.addEventListener('scroll', () => {
+
+        if(window.pageYOffset > listOffsetTop){
+            list.classList.add('fixed');
+            // document.body.prepend(spacer);
+            body.classList.add('offset-top');
+        }
+        
+        if(window.pageYOffset <= listOffsetTop) {
+            list.classList.remove('fixed');
+            // spacer.remove();
+            body.classList.remove('offset-top');
+        }
+
+    });
+}
+ */
+
+
+/**
+ * mobile and fixed menu
+ */
+{
+    // смуга з каталогом
+    const list = document.querySelector('#list');
+
+    const wrapper = list.querySelector('.wrapper');
+
+    // кошик
+    const basket = document.getElementById('basket').cloneNode(true);
+
+    // пошук
+    const search = document.getElementById('search').cloneNode(true);
+
+    // мобільна кнопка
+    const button = document.getElementById('list-button');
+
+    // меню каталогу
+    const menu = list.querySelector('ul');
+
+/* 
+    if(window.innerWidth <= 1240){
+
+        fixedMenu();  
+
+    } else {
+
+        window.addEventListener('scroll', () => {
+
+            // висота до смуги з каталогом
+            const listOffsetTop = list.getBoundingClientRect().top;
+
+            if(listOffsetTop < 1){
+
+                fixedMenu();
+            } else {
+
+                unFixedMenu();
+            }
+        });
+    }
+
+    window.addEventListener('resize', () => {
+        if(window.innerWidth <= 1240){
+
+            fixedMenu();
+        } else {
+
+            unFixedMenu();
+        }
+    });
+ */
+
+    // чЕкаємо на виконання умови
+    let flag = false;
+
+    if(window.innerWidth <= 1240){
+
+        if(flag === false){
+
+            fixedMenu();
+            flag = true;
+        }
+
+    } else {       
+
+        window.addEventListener('scroll', () => {
+
+            // висота до смуги з каталогом
+            const listOffsetTop = list.getBoundingClientRect().top;
+
+            if(listOffsetTop < 1){
+
+                if(flag === false){
+
+                    fixedMenu();
+                    flag = true;
+                }
+
+            } else {
+
+                if(flag === true){
+
+                    unFixedMenu();
+                    flag = false;
+                }
+            }
+        });
+    }
+
+    window.addEventListener('resize', () => {
+        if(window.innerWidth <= 1240){
+
+            if(flag === false){
+
+                fixedMenu();
+                flag = true;
+            }
+
+        } else {
+
+            if(flag === true){
+
+                unFixedMenu();
+                flag = false;
+            }
+
+        }
+
+    });
+
+    list.addEventListener('click', e => {
+        if(e.target.classList.contains('sticky-button')){
+            e.target.classList.toggle('active');
+            menu.classList.toggle('active');
+        }
+    });
+
+    function fixedMenu(){
+        list.classList.add('sticky');
+        // menu.classList.add('sticky-menu');
+        button.classList.add('sticky-button');
+        wrapper.append(search);
+        wrapper.append(basket);
+    }
+
+    function unFixedMenu(){
+        list.classList.remove('sticky');
+        // menu.classList.remove('sticky-menu');
+        button.classList.remove('sticky-button');
+        search.remove();
+        basket.remove();
+    }
+
+}
+
+// todo: resize event

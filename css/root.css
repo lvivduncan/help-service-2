@@ -128,3 +128,8 @@ hr{
     border-top: 1px solid var(--gray);
     margin: 10px 0
 }
+
+/***/
+.hide{
+    display: none!important;
+}

@@ -28,6 +28,7 @@
 }
 
 /* на мобільному додаємо кошик справа */
+/* 
 @media(max-width:1240px) {
 
     #header{
@@ -77,5 +78,11 @@
     #header .wrapper{
         grid-template-columns: auto 1fr auto;
         grid-gap: 10px;
+    }
+} */
+
+@media(max-width:1240px) {
+    #header{
+        display: none;
     }
 }

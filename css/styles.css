@@ -12,7 +12,9 @@
 @import url('./basket.css');
 
 /* модальний кошик */
-@import url('./modal-basket.css'); /* del? */
+@import url('./modal-basket.css');
+
+@import url('./steps.css');
 
 @import url('./modal.css');
 

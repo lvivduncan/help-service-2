@@ -13,86 +13,6 @@
     left: calc(50% - 500px);
 }
 
-/* 3 кроки */
-.steps{
-    position: relative;
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    grid-gap: 30px;
-}
-
-#modal-basket .steps{
-    width: calc(100% - 160px);
-}
-
-@media(max-width:776px) {
-    #modal-basket .steps{
-        align-items: center;
-    }    
-}
-
-@media(max-width:540px) {
-    #modal-basket .steps{
-        grid-template-columns: 1fr;
-        grid-gap: 10px;
-        width: calc(100% - 60px);
-    }    
-}
-
-.steps p{
-    position: relative;
-    margin: 0 0 20px;
-    border-bottom: 3px solid var(--gray-ultralight);
-    color: var(--gray-ultralight);
-    font-size: 16px;
-}
-
-@media(max-width:776px) {
-    .steps p{
-        border: none;
-        display: grid;
-        /* grid-template-columns: repeat(2,auto); */
-        grid-template-columns: 1fr auto;
-        align-items: center;
-    } 
-}
-
-@media(max-width:540px) {
-    .steps p{
-        margin: 0;
-    } 
-}
-
-.steps p::after {
-    content: '';
-    border: solid var(--gray-ultralight);
-    border-width: 0 3px 3px 0;
-    display: inline-block;
-    padding: 10px;
-    width: 22px;
-    height: 22px;
-    transform: rotate(-45deg);
-    position: absolute;
-    bottom: -13px;
-    right: 1px;
-}
-
-@media(max-width:776px) {
-    .steps p::after {
-        position: static;
-        /* height: 22px; */
-    }
-}
-
-.steps p.active{
-    border-bottom-color: var(--green);
-    color: var(--green);
-}
-
-.steps p.active::after {
-    border-color: var(--green);
-}
-
 /* кнопка закриття */
 #modal-button-close {
     position: absolute;
@@ -252,7 +172,8 @@
     margin: 30px 0;
     display: grid;
     align-items: end;
-    grid-template-columns: auto 1fr auto;
+    /* grid-template-columns: auto 1fr auto; */
+    grid-template-columns: repeat(2,1fr);
     grid-gap: 20px;
     text-align: center;
 }

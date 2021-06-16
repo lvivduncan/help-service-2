@@ -1,0 +1,88 @@
+#checkout{
+    margin: 70px 0;
+}
+
+#checkout .wrapper{
+    grid-template-columns: repeat(2,1fr);
+    grid-gap: 50px;
+
+    /* position: sticky; */
+}
+
+/**/
+#checkout-info{
+
+}
+
+/**/
+#checkout-goods{
+    /* overflow: hidden; */
+    border-radius: var(--radius-15);
+    box-shadow: 
+        0 3px 1px -2px rgb(159 193 212 / 30%), 
+        0 2px 2px 0 rgb(159 193 212 / 24%), 
+        0 1px 5px 0 rgb(159 193 212 / 22%);
+    position: relative;
+    padding: 20px;
+}
+
+#checkout-goods .products{
+    margin: 0;
+}
+
+#checkout-goods .product{
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: auto 1fr;
+    /* grid-template-areas: 'checkout-image checkout-desc'; */
+    grid-template-areas:
+        'checkout-image checkout-title'
+        'checkout-image checkout-label'
+        'checkout-image checkout-price';
+    margin: 0 0 20px;
+    border-radius: 0;
+    text-align: left;
+    box-shadow: none;
+}
+
+#checkout-goods .product-image{
+    grid-area: checkout-image;
+    height: auto;
+}
+
+#checkout-goods .product-image img{
+    width: 170px;
+}
+
+#checkout-goods .product-label{
+    grid-area: checkout-label;
+    margin: 0;
+}
+
+#checkout-goods .product-title{
+    grid-area: checkout-title;
+    margin: 0;
+}
+
+#checkout-goods .product-price{
+    grid-area: checkout-price;
+    display: flex;
+}
+
+#checkout-goods .product-price span{
+    margin-right: 5px;
+    display: inline-block;
+}
+
+/* todo: span -- грн */
+#checkout-edit{
+    position: absolute;
+    top: -35px;
+    right: 0;
+    width: 28px;
+    height: 28px;
+    background-size: cover;
+
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23036838' viewBox='0 0 16 16'%3E%3Cpath d='M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z'/%3E%3Cpath fill-rule='evenodd' d='M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z'/%3E%3C/svg%3E");
+    cursor: pointer;
+}

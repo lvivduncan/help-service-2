@@ -536,3 +536,12 @@ const lightboxDescription = GLightbox({
 }
 
 // todo: resize event
+
+{
+    const checkoutGoods = document.getElementById('checkout-goods');
+    const checkoutEdit = document.createElement('div');
+    checkoutEdit.setAttribute('id', 'checkout-edit');
+    checkoutGoods.append(checkoutEdit);
+
+    // click button -- modal
+}

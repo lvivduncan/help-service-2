@@ -8,6 +8,17 @@
 }
 /* каталог */
 
+/* зліва кількість, справа сума */
+.goods-quantity{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 5px;
+    background: var(--green-superultralight);
+    margin: 0 0 10px;
+}
+
+
 /* назва блоку */
 .products h2{
     margin: 0 auto 30px;
@@ -140,6 +151,10 @@
 .product-price{
     font-size: 16px;
     color: var(--dark);
+}
+
+.product-price strong{
+    margin-right: 5px;
 }
 
 .product-price span{

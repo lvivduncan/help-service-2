@@ -14,7 +14,11 @@
 /* модальний кошик */
 @import url('./modal-basket.css');
 
+/* 3 steps */
 @import url('./steps.css');
+
+/* checkout info + goods */
+@import url('./checkout.css');
 
 @import url('./modal.css');
 

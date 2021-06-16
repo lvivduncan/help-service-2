@@ -52,16 +52,6 @@
     }    
 }
 
-/* кількість товарів + sum */
-#modal-quantity {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 5px;
-    background: var(--green-superultralight);
-    margin: 0 0 10px;
-}
-
 /* кількість товарів */
 #modal-basket-number{
     /* margin: 10px 0 30px */

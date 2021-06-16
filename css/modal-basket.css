@@ -8,22 +8,49 @@
     height: 580px;
     position: fixed;
     z-index: 10;
-    overflow: hidden;
+    /* overflow: hidden; */
     top: calc(50% - 230px);
     left: calc(50% - 500px);
+}
+
+/* скруглення для картинки */
+#modal-basket .product-image img {
+    border-radius: 7px;
 }
 
 /* кнопка закриття */
 #modal-button-close {
     position: absolute;
-    top: 13px;
-    right: 13px;
+    top: -35px;
+    right: 0px;
     width: 30px;
     height: 30px;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23036838' viewBox='0 0 16 16'%3E%3Cpath d='M1.293 1.293a1 1 0 0 1 1.414 0L8 6.586l5.293-5.293a1 1 0 1 1 1.414 1.414L9.414 8l5.293 5.293a1 1 0 0 1-1.414 1.414L8 9.414l-5.293 5.293a1 1 0 0 1-1.414-1.414L6.586 8 1.293 2.707a1 1 0 0 1 0-1.414z'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23ffffff' viewBox='0 0 16 16'%3E%3Cpath d='M1.293 1.293a1 1 0 0 1 1.414 0L8 6.586l5.293-5.293a1 1 0 1 1 1.414 1.414L9.414 8l5.293 5.293a1 1 0 0 1-1.414 1.414L8 9.414l-5.293 5.293a1 1 0 0 1-1.414-1.414L6.586 8 1.293 2.707a1 1 0 0 1 0-1.414z'/%3E%3C/svg%3E");
     cursor: pointer;
 }
 
+@media(max-width:776px) {
+    #modal-button-close {
+        top: 10px;
+        right: 20px;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23036838' viewBox='0 0 16 16'%3E%3Cpath d='M1.293 1.293a1 1 0 0 1 1.414 0L8 6.586l5.293-5.293a1 1 0 1 1 1.414 1.414L9.414 8l5.293 5.293a1 1 0 0 1-1.414 1.414L8 9.414l-5.293 5.293a1 1 0 0 1-1.414-1.414L6.586 8 1.293 2.707a1 1 0 0 1 0-1.414z'/%3E%3C/svg%3E");
+    }    
+}
+ 
+#modal-button-close::before {
+    content: 'esc';
+    display: block;
+    position: absolute;
+    left: -35px;
+    top: 3px;
+    color: var(--white);
+}
+
+@media(max-width:776px) {
+    #modal-button-close::before {
+        color: var(--green);
+    }    
+}
 
 /* кількість товарів + sum */
 #modal-quantity {
@@ -32,7 +59,7 @@
     justify-content: space-between;
     padding: 10px 5px;
     background: var(--green-superultralight);
-    margin: 10px 0;
+    margin: 0 0 10px;
 }
 
 /* кількість товарів */
@@ -112,6 +139,9 @@
 @media(max-width:400px) {
     #modal-basket .product-image{
         width: 100%;
+
+        border-radius: 7px;
+        overflow: hidden;
     }
     #modal-basket .product-marker{
         width: calc(100% - 40px);
@@ -154,12 +184,13 @@
 }
 
 @media(max-width:400px){
-    #modal-basket .product-delete{
+    #modal-basket .product-delete {
         position: absolute;
         top: 0;
         right: 0;
         z-index: 1;
         background: var(--red);
+        border-radius: 0 7px 0 7px;
     }
 
     #modal-basket .product-delete span{
@@ -235,13 +266,9 @@
 
 @media(max-width:776px) {
     #modal-basket {
-
-        /* height: calc(100vh - 100px); */
-        /* top: 100px; */
-        /* overflow-y: scroll; */
-
-
+        padding-top: 50px;
         top: 0;
+        /* top: 50px; */
         left: 0;
         bottom: 0;
         right: 0;

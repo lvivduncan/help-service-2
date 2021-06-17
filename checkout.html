@@ -73,7 +73,7 @@
     <!-- модальне вікно -->
     <div id="modal-basket">
 
-        <div id="modal-quantity">
+        <div class="goods-quantity">
             <div id="modal-basket-number">
                 <strong>3</strong> товари
             </div>
@@ -189,13 +189,8 @@
         </div>
         <!-- .products -->
 
-        <div id="modal-buttons">
+        <div class="two-buttons">
             <button>Продовжити покупки</button>
-            <!-- <div id="modal-sum">
-                <span>
-                    Сума до оплати <strong>44 999</strong> грн
-                </span>
-            </div> -->
             <button>Оформити замовлення</button>
         </div>
 
@@ -218,7 +213,7 @@
     </nav>
 
     <!-- checkout буде на 1 сторінці -->
-
+<!-- 
     <div id="steps">
         <div class="wrapper">
             <p>Кошик</p>
@@ -226,12 +221,110 @@
             <p>Підтвердження</p>            
         </div>
     </div>
-
+ -->
     <div id="checkout">
         <div class="wrapper">
-            <div id="checkout-info">
-                1 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi dolorem cupiditate, quod cumque ex dolore deleniti, sint quisquam iure, maxime hic ab a dolor? Quidem, corrupti! Aperiam voluptates iusto laborum obcaecati in voluptas tenetur, cupiditate quis, reprehenderit blanditiis facere dolores iure qui itaque minus molestias quaerat error dicta. Aperiam quam perferendis, harum accusamus voluptatum atque distinctio possimus a impedit, aspernatur quasi ipsam illo corrupti consequatur inventore sequi magni. Esse, saepe quaerat iste consectetur necessitatibus quae sapiente obcaecati porro? Facere eveniet impedit error incidunt non ipsum, dolor cupiditate culpa eos maxime earum laboriosam vitae necessitatibus voluptates aspernatur in soluta voluptate vel?
+
+            <div id="checkout-header">
+                <div class="checkout-info active">
+                    <svg viewBox="0 0 16 16"><path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/><path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/></svg>
+                    <span>Доставка і оплата</span>
+                </div>
+                <div class="checkout-goods">
+                    <svg viewBox="0 0 16 16"><path d="M8 1a2 2 0 0 0-2 2v2H5V3a3 3 0 1 1 6 0v2h-1V3a2 2 0 0 0-2-2zM5 5H3.36a1.5 1.5 0 0 0-1.483 1.277L.85 13.13A2.5 2.5 0 0 0 3.322 16h9.355a2.5 2.5 0 0 0 2.473-2.87l-1.028-6.853A1.5 1.5 0 0 0 12.64 5H11v1.5a.5.5 0 0 1-1 0V5H6v1.5a.5.5 0 0 1-1 0V5z"/></svg>
+                    <b>3</b><span>Замовлення</span>
+                </div>
             </div>
+
+            <div id="checkout-info" class="active">
+
+                <fieldset>
+                    <legend>Доставка</legend>
+
+                    <label>
+                        <input type="radio" name="delivery"> 
+                        <div class="input-name">Нова Пошта <div class="input-price"><span>260</span></div></div>
+                        <div class="input-desc">
+                            <h4>Нова Пошта</h4>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat blanditiis quasi qui facere minus non molestiae, necessitatibus cupiditate corporis ea vero consectetur assumenda nobis, voluptates praesentium quam similique.</p>
+                        </div>
+                    </label>
+
+                    <label>
+                        <input type="radio" name="delivery"> 
+                        <div class="input-name">MeestExpress <div class="input-price"><span>260</span></div></div>
+                        <div class="input-desc">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat blanditiis quasi qui facere minus non molestiae, necessitatibus cupiditate corporis ea vero consectetur assumenda nobis, voluptates praesentium quam similique. Ipsum, nisi.
+                        </div>
+                    </label>
+
+                    <label>
+                        <input type="radio" name="delivery"> 
+                        <div class="input-name">Justin <div class="input-price"><span>260</span></div></div>
+                        <div class="input-desc">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat blanditiis quasi qui facere minus non molestiae, necessitatibus cupiditate corporis ea vero consectetur assumenda nobis, voluptates praesentium quam similique. Ipsum, nisi.
+                        </div>
+                    </label>
+
+                    <label>
+                        <input type="radio" name="delivery"> 
+                        <div class="input-name">Кур'єр (м.Львів) <div class="input-price"><span>260</span></div></div>
+                        <div class="input-desc">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat blanditiis quasi qui facere minus non molestiae, necessitatibus cupiditate corporis ea vero consectetur assumenda nobis, voluptates praesentium quam similique. Ipsum, nisi.
+                        </div>
+                    </label>
+
+                    <label>
+                        <input type="radio" name="delivery"> 
+                        <div class="input-name">Забрати самостійно <div class="input-price">Безкоштовно</div></div>
+                        <div class="input-desc">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat blanditiis quasi qui facere minus non molestiae, necessitatibus cupiditate corporis ea vero consectetur assumenda nobis, voluptates praesentium quam similique. Ipsum, nisi.
+                        </div>
+                    </label>
+
+                </fieldset>
+
+                <fieldset>
+                    <legend>Оплата</legend>
+
+                        <label>
+                            <input type="radio" name="payment">
+                            <div class="input-name">Готівка</div>
+                            <div class="input-desc">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat blanditiis quasi qui facere minus non molestiae, necessitatibus cupiditate corporis ea vero consectetur assumenda nobis, voluptates praesentium quam similique. Ipsum, nisi.
+                            </div>
+                        </label>
+                            
+                        <label>
+                            <input type="radio" name="payment">
+                            <div class="input-name">Банківський переказ</div>
+                            <div class="input-desc">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat blanditiis quasi qui facere minus non molestiae, necessitatibus cupiditate corporis ea vero consectetur assumenda nobis, voluptates praesentium quam similique. Ipsum, nisi.
+                            </div>
+                        </label>
+                            
+                        <label>
+                            <input type="radio" name="payment">
+                            <div class="input-name">LiqPay</div>
+                            <div class="input-desc">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat blanditiis quasi qui facere minus non molestiae, necessitatibus cupiditate corporis ea vero consectetur assumenda nobis, voluptates praesentium quam similique. Ipsum, nisi.
+                            </div>
+                        </label>
+                            
+                        <label>
+                            <input type="radio" name="payment">
+                            <div class="input-name">WayForPay</div>
+                            <div class="input-desc">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat blanditiis quasi qui facere minus non molestiae, necessitatibus cupiditate corporis ea vero consectetur assumenda nobis, voluptates praesentium quam similique. Ipsum, nisi.
+                            </div>
+                        </label>
+
+                    </p>
+
+                </fieldset>
+
+            </div>
+
             <div id="checkout-goods">
 
                 <div class="goods-quantity">
@@ -307,10 +400,20 @@
         
                 </div>
             </div>
+
+            <div id="checkout-go">
+                <p>Загальна сума: <b>999</b> грн</p>
+
+                <div class="two-buttons">
+                    <button>Оформити замовлення</button>
+                    <button>До Вас передзвонити?</button>
+                </div>
+
+            </div>
         </div>
     </div>
 
-    <div style="height:600px"></div>
+    <!-- <div style="height:600px"></div> -->
 
     <footer id="footer">
         <div class="wrapper">

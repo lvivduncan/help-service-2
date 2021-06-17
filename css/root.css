@@ -133,3 +133,55 @@ hr{
 .hide{
     display: none!important;
 }
+
+/* 2 button */
+
+
+.two-buttons{
+    margin: 30px 0;
+    display: grid;
+    align-items: end;
+    /* grid-template-columns: auto 1fr auto; */
+    grid-template-columns: repeat(2,1fr);
+    grid-gap: 20px;
+    text-align: center;
+}
+
+@media(max-width:776px) {
+    .two-buttons{
+        grid-template-columns: 1fr;
+        grid-gap: 10px
+    }    
+}
+
+/* .two-buttons strong{
+    color: var(--green);
+} */
+
+.two-buttons button{
+    margin: 0 10px 0 0;
+    display: inline-block;
+    padding: 15px 25px;
+    border-radius: var(--radius);
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    background: var(--white);
+    color: var(--gray-dark);
+    border: 2px solid var(--green);
+    padding: 14px 23px;
+    cursor: pointer;
+}
+
+.two-buttons button:hover{
+    background: linear-gradient(90deg, rgba(238,238,238,1) 0%, rgba(255,255,255,1) 50%, rgba(238,238,238,1) 100%);
+}
+
+.two-buttons button:first-child{
+    background: var(--gradient);
+    color: var(--white);
+}
+
+.two-buttons button:first-child:hover{
+    background: var(--gradient-reverce);
+}

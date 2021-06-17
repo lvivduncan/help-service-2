@@ -157,7 +157,7 @@ const lightboxDescription = GLightbox({
 
     // open-close
     document.addEventListener('click', e => {        
-        if(e.target.id === 'basket' || e.target.id === 'basket-sum'){
+        if(e.target.id === 'basket' || e.target.id === 'basket-sum' || e.target.id === 'checkout-edit'){
             e.preventDefault();
         
             // add modal
@@ -193,7 +193,38 @@ const lightboxDescription = GLightbox({
         }
     });
 
-    // todo: add touch events?
+
+    // todo: add check empty
+    
+    // create checkout edit button
+    const checkoutGoods = document.getElementById('checkout-goods');
+    const checkoutEdit = document.createElement('div');
+    checkoutEdit.setAttribute('id', 'checkout-edit');
+    checkoutGoods.append(checkoutEdit);
+
+    // checkout tabs
+    const checkoutInfoButton = document.querySelector('.checkout-info');
+    const checkoutGoodsButton = document.querySelector('.checkout-goods');
+
+    const checkoutInfoData = document.getElementById('checkout-info');
+    const checkoutGoodsData = document.getElementById('checkout-goods');
+
+    checkoutInfoButton.addEventListener('click', () => {
+        checkoutInfoData.classList.add('active');
+        checkoutGoodsData.classList.remove('active');
+
+        checkoutInfoButton.classList.add('active');
+        checkoutGoodsButton.classList.remove('active');
+    });
+
+    checkoutGoodsButton.addEventListener('click', () => {
+        checkoutGoodsData.classList.add('active');
+        checkoutInfoData.classList.remove('active');
+
+        checkoutGoodsButton.classList.add('active');
+        checkoutInfoButton.classList.remove('active');
+    });
+
 }
 
 
@@ -535,13 +566,8 @@ const lightboxDescription = GLightbox({
 
 }
 
-// todo: resize event
-
 {
-    const checkoutGoods = document.getElementById('checkout-goods');
-    const checkoutEdit = document.createElement('div');
-    checkoutEdit.setAttribute('id', 'checkout-edit');
-    checkoutGoods.append(checkoutEdit);
 
-    // click button -- modal
+
+
 }

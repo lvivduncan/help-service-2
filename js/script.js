@@ -194,36 +194,41 @@ const lightboxDescription = GLightbox({
     });
 
 
-    // todo: add check empty
     
     // create checkout edit button
     const checkoutGoods = document.getElementById('checkout-goods');
-    const checkoutEdit = document.createElement('div');
-    checkoutEdit.setAttribute('id', 'checkout-edit');
-    checkoutGoods.append(checkoutEdit);
+    
+    // check empty
+    if(checkoutGoods !== null){
 
-    // checkout tabs
-    const checkoutInfoButton = document.querySelector('.checkout-info');
-    const checkoutGoodsButton = document.querySelector('.checkout-goods');
+        const checkoutEdit = document.createElement('div');
+        checkoutEdit.setAttribute('id', 'checkout-edit');
+        checkoutGoods.append(checkoutEdit);
 
-    const checkoutInfoData = document.getElementById('checkout-info');
-    const checkoutGoodsData = document.getElementById('checkout-goods');
+        // checkout tabs
+        const checkoutInfoButton = document.querySelector('.checkout-info');
+        const checkoutGoodsButton = document.querySelector('.checkout-goods');
 
-    checkoutInfoButton.addEventListener('click', () => {
-        checkoutInfoData.classList.add('active');
-        checkoutGoodsData.classList.remove('active');
+        const checkoutInfoData = document.getElementById('checkout-info');
+        const checkoutGoodsData = document.getElementById('checkout-goods');
 
-        checkoutInfoButton.classList.add('active');
-        checkoutGoodsButton.classList.remove('active');
-    });
+        checkoutInfoButton.addEventListener('click', () => {
+            checkoutInfoData.classList.add('active');
+            checkoutGoodsData.classList.remove('active');
 
-    checkoutGoodsButton.addEventListener('click', () => {
-        checkoutGoodsData.classList.add('active');
-        checkoutInfoData.classList.remove('active');
+            checkoutInfoButton.classList.add('active');
+            checkoutGoodsButton.classList.remove('active');
+        });
 
-        checkoutGoodsButton.classList.add('active');
-        checkoutInfoButton.classList.remove('active');
-    });
+        checkoutGoodsButton.addEventListener('click', () => {
+            checkoutGoodsData.classList.add('active');
+            checkoutInfoData.classList.remove('active');
+
+            checkoutGoodsButton.classList.add('active');
+            checkoutInfoButton.classList.remove('active');
+        });
+    }
+
 
 }
 

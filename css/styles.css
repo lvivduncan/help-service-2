@@ -25,6 +25,9 @@
 /* nav -- category */
 @import url('./list.css');
 
+/**/
+@import url('./levus-tooltip.css');
+
 /* inner */
 @import url('./catalog.css');
 @import url('./filter.css');

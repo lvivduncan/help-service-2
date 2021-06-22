@@ -455,39 +455,6 @@ const lightboxDescription = GLightbox({
     // меню каталогу
     const menu = list.querySelector('ul');
 
-/* 
-    if(window.innerWidth <= 1240){
-
-        fixedMenu();  
-
-    } else {
-
-        window.addEventListener('scroll', () => {
-
-            // висота до смуги з каталогом
-            const listOffsetTop = list.getBoundingClientRect().top;
-
-            if(listOffsetTop < 1){
-
-                fixedMenu();
-            } else {
-
-                unFixedMenu();
-            }
-        });
-    }
-
-    window.addEventListener('resize', () => {
-        if(window.innerWidth <= 1240){
-
-            fixedMenu();
-        } else {
-
-            unFixedMenu();
-        }
-    });
- */
-
     // чЕкаємо на виконання умови
     let flag = false;
 
@@ -555,24 +522,62 @@ const lightboxDescription = GLightbox({
 
     function fixedMenu(){
         list.classList.add('sticky');
-        // menu.classList.add('sticky-menu');
         button.classList.add('sticky-button');
         wrapper.append(search);
         wrapper.append(basket);
+
+        // test tooltip
+        levusTooltip();
     }
 
     function unFixedMenu(){
         list.classList.remove('sticky');
-        // menu.classList.remove('sticky-menu');
         button.classList.remove('sticky-button');
         search.remove();
         basket.remove();
     }
 
-}
+/**
+ * автоматичні тултіпи
+ */
 
-{
+    function levusTooltip(){
+    // затримка
+        const delay = 1000;
 
+        // елементи
+        const tooltip = document.querySelectorAll('.sticky .levus-tooltip');
 
+        console.log(tooltip)
 
+        if(localStorage.tooltip != 1){
+
+            // швидше працює
+            for(let i = 0; i<tooltip.length; i++){
+
+                // створили елемент
+                const span = document.createElement('span');
+
+                // додали клас для вибірки
+                span.setAttribute('class', 'content');
+
+                // отримали контент з атрибута
+                const title = tooltip[i].title;
+
+                // встановили затримку
+                span.style.animationDelay = `${delay * i}ms`;
+
+                // поклали дані з атрибута у тултіп
+                span.append(title);
+
+                // додали в тег
+                tooltip[i].append(span);
+
+            }
+
+            // localStorage.tooltip = 1;
+
+        }        
+    }
+    
 }

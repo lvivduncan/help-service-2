@@ -121,7 +121,7 @@
 
 /* закінчується */
 .product-label.orange{
-    color: var(--orange);
+    color: var(--orange-dark);
 }
 
 .product-title{

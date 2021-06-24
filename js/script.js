@@ -1,5 +1,41 @@
 'use strict';
 
+
+/**
+ * стікед навбар
+ */
+
+{
+    const contact = document.getElementById('contact');
+    // flag
+    let checkOffset = false;
+
+    window.addEventListener('scroll', () => {
+
+        const offset = document.getElementById('list').getBoundingClientRect().top;
+
+        if(offset < 3) {
+            
+            if(!checkOffset){
+                
+                contact.classList.add('active');
+                checkOffset = true;
+            }
+            
+        } else {
+            
+            if(checkOffset){
+                
+                contact.classList.remove('active');
+                checkOffset = false;
+            }
+
+        }
+
+    });
+}
+
+
 /**
  * вкладки
  */
@@ -24,10 +60,13 @@
     });
 }
 
+console.time('slider');
+
 /**
  * слайдер не головній з автозміною, тому без стрілок
  */
 {
+
     // обгортка
     const slider = document.querySelector('#levus-slider');
 
@@ -63,8 +102,10 @@
             }, 8000);
         }
     }
+    
 }
 
+console.timeEnd('slider');
 
 /**
  * фото у товарі
@@ -437,6 +478,7 @@ const lightboxDescription = GLightbox({
 /**
  * mobile and fixed menu
  */
+/* 
 {
     // смуга з каталогом
     const list = document.querySelector('#list');
@@ -536,48 +578,55 @@ const lightboxDescription = GLightbox({
         search.remove();
         basket.remove();
     }
+}
+ */
+
+
 
 /**
  * автоматичні тултіпи
  */
 
-    function levusTooltip(){
+ function levusTooltip(){
     // затримка
-        const delay = 1000;
+    const delay = 1000;
 
-        // елементи
-        const tooltip = document.querySelectorAll('.sticky .levus-tooltip');
+    // елементи
+    const tooltip = document.querySelectorAll('.sticky .levus-tooltip');
 
-        console.log(tooltip)
+    if(localStorage.tooltip != 1){
 
-        if(localStorage.tooltip != 1){
+        // швидше працює
+        for(let i = 0; i<tooltip.length; i++){
 
-            // швидше працює
-            for(let i = 0; i<tooltip.length; i++){
+            // створили елемент
+            const span = document.createElement('span');
 
-                // створили елемент
-                const span = document.createElement('span');
+            // додали клас для вибірки
+            span.setAttribute('class', 'content');
 
-                // додали клас для вибірки
-                span.setAttribute('class', 'content');
+            // отримали контент з атрибута
+            const title = tooltip[i].ariaLabel;
 
-                // отримали контент з атрибута
-                const title = tooltip[i].title;
+            // встановили затримку
+            span.style.animationDelay = `${delay * i}ms`;
 
-                // встановили затримку
-                span.style.animationDelay = `${delay * i}ms`;
+            // поклали дані з атрибута у тултіп
+            span.append(title);
 
-                // поклали дані з атрибута у тултіп
-                span.append(title);
+            // додали в тег
+            tooltip[i].append(span);
 
-                // додали в тег
-                tooltip[i].append(span);
+            // додатковий клас для першого
+            tooltip[0].classList.add('first');
 
-            }
+            // додатковий клас для останнього
+            tooltip[tooltip.length - 1].classList.add('last');
+        }
 
-            // localStorage.tooltip = 1;
+        // localStorage.tooltip = 1;
 
-        }        
-    }
-    
+    }        
 }
+
+levusTooltip();

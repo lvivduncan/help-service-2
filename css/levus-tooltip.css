@@ -5,12 +5,11 @@
 .levus-tooltip .content{
     display: block;
     position: absolute;
-    left: calc(50% - 50px);
-    bottom: -210%;
-    /* top: 210%; */
-    width: 100px;
-    padding: 10px;
-    background: var(--red);
+    left: calc(50% - 40px);
+    bottom: -240%;
+    width: 80px;
+    padding: 10px 1px;
+    background: var(--green-dark);
     color: var(--white)!important;
     box-shadow: 0 0 10px rgb(236, 236, 236);
     text-align: center;
@@ -19,18 +18,48 @@
 
     opacity: 0;
     transition: 1s;
-    animation: show 10s;
+    animation: show 4s;
     transform-origin: 0 0;
-    animation-fill-mode: forwards;
+}
+
+.levus-tooltip .content::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: calc(50% - 10px);
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    transform: rotate(45deg);
+    background: var(--green-dark);
 }
 
 @keyframes show {
     0%{
         opacity: 0;
+        transform: rotateX(90deg);
+    }    
+    100%{
         transform: rotateX(0);
-    }
-    60%,100%{
         opacity: 1;
-        transform: rotateX(90deg) translateY(50px);
+    }
+}
+
+@media(max-width:776px) {
+    /* перший елемент */
+    .levus-tooltip.first .content{
+        left: calc(50% - 35px);
+    }
+    .levus-tooltip.first .content::before{
+        left: calc(50% - 15px);
+    }
+
+    /* останній */
+    .levus-tooltip.last .content{
+        left: auto;
+        right: calc(50% - 30px)
+    }
+    .levus-tooltip.last .content::before{
+        left: calc(50% - -2px);
     }
 }

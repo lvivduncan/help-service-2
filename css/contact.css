@@ -1,6 +1,7 @@
 
 #contact{
-    padding: 40px 0
+    padding: 40px 0;
+    transition: .5s;
 }
 
 #contact .wrapper{
@@ -18,8 +19,57 @@
     font-size: 14px;
 }
 
+/* ////////////////////////////////
+робимо блок фіксованим після скролу
+//////////////////////////////// */
+
+#contact .sticky-hide{
+    display: block;
+}
+
+#contact .sticky-show{
+    display: none;
+}
+
+/* add class for sticky */
+#contact.active{
+    position: sticky;
+    top:0;
+    background: var(--bg-block);
+    z-index: 2;
+    padding: 10px 0;
+}
+
+#contact.active .sticky-hide{
+    display: none;
+}
+
+#contact.active .sticky-show{
+    display: block;
+}
+
+#contact.active .wrapper{
+    grid-template-columns: 40px 1fr repeat(2,40px);
+}
+
 @media(max-width:1240px) {
     #contact{
+        position: sticky;
+        top:0;
+        background: var(--bg-block);
+        z-index: 2;
+        padding: 10px 0;
+    }
+
+    #contact .sticky-hide{
         display: none;
+    }
+    
+    #contact .sticky-show{
+        display: block;
+    }
+    
+    #contact .wrapper{
+        grid-template-columns: 40px 1fr repeat(2,40px);
     }
 }

@@ -43,9 +43,11 @@
 } */
 
 /* button! */
-/* #list-button{
-    color: var(--green);
-    font-size: 22px;
+#list-button{
+    /* color: var(--green); */
+    color: var(--dark);
+    /* font-size: 22px; */
+    font-size: 18px;
     display: inline-block;
     padding-right: 20px;
 
@@ -55,7 +57,7 @@
     background-repeat: no-repeat;
 }
 
-@media(max-width:1240px) {
+/* @media(max-width:1240px) {
     #list-button{
         text-indent: -9999px;
 

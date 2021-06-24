@@ -72,16 +72,19 @@
     padding: 5px 8px;
     border-radius: 10px;
     background: var(--orange);
-    color: var(--white);
+    /* color: var(--white); */
+    color: var(--dark);
     font-size: 12px;
 }
 
 .product-marker span.cyan{
     background: var(--cyan);
+    color: var(--white)
 }
 
 .product-marker span.green{
     background: var(--green);
+    color: var(--white)
 }
 
 .product-image{

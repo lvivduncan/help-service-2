@@ -100,19 +100,25 @@
 //////////// */
 
 /* картинка знизу*/
-.levus-content img {
-    border-radius: 15px;
+.levus-content picture {
+    /* border-radius: 15px; */
     max-width: 100% !important;
     height: auto !important;
-
+    /* display: block; */
+    
     grid-area: levus-img;
-
+    
     /* -webkit-transform: translateY(200%); */
     transform: translateY(200%);
 }
 
+.levus-content picture img{
+    border-radius: 15px;
+
+}
+
 @media(max-width: 991px) {
-    .levus-content img {
+    .levus-content picture {
         margin: auto;
     }
 }
@@ -176,7 +182,7 @@
 блоки активного слайда
 /////////////////// */
 
-.show .levus-content img {
+.show .levus-content picture {
     animation: img-0 1500ms linear forwards 1s;
 }
 

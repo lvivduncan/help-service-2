@@ -25,6 +25,7 @@
 #trust h4{
     margin: 0 0 10px;
     color: var(--green);
+    font-size: 18px;
 }
 
 @media(max-width:540px) {

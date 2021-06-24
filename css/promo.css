@@ -12,7 +12,7 @@
 }
 
 #promo h4{
-    font-weight: 500;
+    /* font-weight: 500; */
     color: var(--green);
     margin: 0 0 10px;
 }

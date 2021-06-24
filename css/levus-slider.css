@@ -27,7 +27,7 @@
     top: 0;
     left: 0;
 
-    -webkit-transition: background 2s;
+    /* -webkit-transition: background 2s; */
     transition: background 2s;
 }
 
@@ -47,7 +47,7 @@
 /* активний слайд */
 #levus-slider .levus-slide.show {
     visibility: visible;
-    -webkit-animation: background-show 3s linear forwards 0s;
+    /* -webkit-animation: background-show 3s linear forwards 0s; */
     animation: background-show 3s linear forwards 0s;
 }
 
@@ -107,7 +107,7 @@
 
     grid-area: levus-img;
 
-    -webkit-transform: translateY(200%);
+    /* -webkit-transform: translateY(200%); */
     transform: translateY(200%);
 }
 
@@ -126,7 +126,7 @@
     grid-area: levus-p1;
     align-self: end;
 
-    -webkit-transform: scaleY(0);
+    /* -webkit-transform: scaleY(0); */
     transform: scaleY(0);
 }
 
@@ -237,7 +237,7 @@
 ///////////// */
 
 /* анімація фону*/
-@-webkit-keyframes background-show {
+/* @-webkit-keyframes background-show {
     0% {
         opacity: 0;
     }
@@ -247,7 +247,7 @@
     }
 
     100% {}
-}
+} */
 
 @keyframes background-show {
     0% {

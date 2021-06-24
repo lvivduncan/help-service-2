@@ -16,7 +16,7 @@
 
 #contact .wrapper p{
     margin: 10px 0;
-    font-size: 14px;
+    /* font-size: 14px; */
 }
 
 /* ////////////////////////////////
@@ -34,7 +34,7 @@
 /* add class for sticky */
 #contact.active{
     position: sticky;
-    top:0;
+    top: 0;
     background: var(--bg-block);
     z-index: 2;
     padding: 10px 0;

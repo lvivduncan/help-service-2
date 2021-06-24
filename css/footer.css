@@ -26,6 +26,11 @@
 #footer li a{
     text-decoration: none;
     color: var(--dark);
+    transition: .5s;
+}
+
+#footer li a:hover{
+    color: var(--green);
 }
 
 /* цопірайт */

@@ -101,14 +101,9 @@
 
 /* картинка знизу*/
 .levus-content picture {
-    /* border-radius: 15px; */
     max-width: 100% !important;
     height: auto !important;
-    /* display: block; */
-    
     grid-area: levus-img;
-    
-    /* -webkit-transform: translateY(200%); */
     transform: translateY(200%);
 }
 

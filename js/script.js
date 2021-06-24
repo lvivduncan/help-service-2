@@ -1,5 +1,13 @@
 'use strict';
 
+// window.onload = function(){
+    
+    if(window.innerWidth < 1100){
+
+        levusTooltip();
+    }
+    
+// }
 
 /**
  * стікед навбар
@@ -7,18 +15,21 @@
 
 {
     const contact = document.getElementById('contact');
+
     // flag
     let checkOffset = false;
 
     window.addEventListener('scroll', () => {
 
-        const offset = document.getElementById('list').getBoundingClientRect().top;
+        const list = document.getElementById('list');
+        const offset = list.getBoundingClientRect().top;
 
         if(offset < 3) {
             
             if(!checkOffset){
                 
                 contact.classList.add('active');
+                list.classList.add('sticky');
                 checkOffset = true;
             }
             
@@ -27,12 +38,14 @@
             if(checkOffset){
                 
                 contact.classList.remove('active');
+                list.classList.remove('sticky');
                 checkOffset = false;
             }
 
         }
 
     });
+
 }
 
 
@@ -60,10 +73,8 @@
     });
 }
 
-console.time('slider');
-
 /**
- * слайдер не головній з автозміною, тому без стрілок
+ * слайдер нa головній з автозміною, тому без стрілок
  */
 {
 
@@ -104,8 +115,6 @@ console.time('slider');
     }
     
 }
-
-console.timeEnd('slider');
 
 /**
  * фото у товарі
@@ -199,7 +208,7 @@ const lightboxDescription = GLightbox({
     // open-close
     document.addEventListener('click', e => {        
         if(e.target.id === 'basket' || e.target.id === 'basket-sum' || e.target.id === 'checkout-edit'){
-            e.preventDefault();
+            // e.preventDefault();
         
             // add modal
             document.body.className = 'modal-body-fixed';
@@ -368,55 +377,6 @@ const lightboxDescription = GLightbox({
     }
 }
 
-/**
- * mobile header
- */
-/* 
-{
-    // місце, де все відбувається
-    const header = document.querySelector('#header .wrapper');
-
-    const basket = document.getElementById('basket').cloneNode(true);
-    const search = document.getElementById('search').cloneNode(true);
-
-    const button = document.createElement('div');
-    button.setAttribute('id', 'mobile-button');
-
-    const body = document.querySelector('body');
-
-    const spacer = document.createElement('div');
-    spacer.setAttribute('id', 'header-spacer');
-
-    window.addEventListener('resize', function() {
-        requestAnimationFrame(changeHeader);
-        
-    });
-
-    changeHeader();
-
-    // при зменшенні екрану у хедері мають вставитися 3 елементи замість попередніх двох
-    // мобільна кнопка має бути згенерована
-    function changeHeader(){
-
-        if(window.innerWidth < 1240){
-
-            document.body.prepend(spacer);
-            header.append(button);
-            header.append(basket);
-            header.append(search);
-
-        }
-        
-        if(window.innerWidth > 1240){
-
-            spacer.remove();
-            button.remove();
-            basket.remove();
-            search.remove();
-        }
-    }
-}
- */
 // to up
 {
     const levusUp = document.createElement('div');
@@ -445,145 +405,6 @@ const lightboxDescription = GLightbox({
 }
 
 /**
- * desktop menu catalog fixed
- */
-/* 
-{
-    const body = document.querySelector('body');
-    const list = document.getElementById('list');
-    const listOffsetTop = list.getBoundingClientRect().top;
-
-    // const spacer = document.createElement('div');
-    // spacer.setAttribute('id', 'header-spacer');
-    
-    window.addEventListener('scroll', () => {
-
-        if(window.pageYOffset > listOffsetTop){
-            list.classList.add('fixed');
-            // document.body.prepend(spacer);
-            body.classList.add('offset-top');
-        }
-        
-        if(window.pageYOffset <= listOffsetTop) {
-            list.classList.remove('fixed');
-            // spacer.remove();
-            body.classList.remove('offset-top');
-        }
-
-    });
-}
- */
-
-
-/**
- * mobile and fixed menu
- */
-/* 
-{
-    // смуга з каталогом
-    const list = document.querySelector('#list');
-
-    const wrapper = list.querySelector('.wrapper');
-
-    // кошик
-    const basket = document.getElementById('basket').cloneNode(true);
-
-    // пошук
-    const search = document.getElementById('search').cloneNode(true);
-
-    // мобільна кнопка
-    const button = document.getElementById('list-button');
-
-    // меню каталогу
-    const menu = list.querySelector('ul');
-
-    // чЕкаємо на виконання умови
-    let flag = false;
-
-    if(window.innerWidth <= 1240){
-
-        if(flag === false){
-
-            fixedMenu();
-            flag = true;
-        }
-
-    } else {       
-
-        window.addEventListener('scroll', () => {
-
-            // висота до смуги з каталогом
-            const listOffsetTop = list.getBoundingClientRect().top;
-
-            if(listOffsetTop < 1){
-
-                if(flag === false){
-
-                    fixedMenu();
-                    flag = true;
-                }
-
-            } else {
-
-                if(flag === true){
-
-                    unFixedMenu();
-                    flag = false;
-                }
-            }
-        });
-    }
-
-    window.addEventListener('resize', () => {
-        if(window.innerWidth <= 1240){
-
-            if(flag === false){
-
-                fixedMenu();
-                flag = true;
-            }
-
-        } else {
-
-            if(flag === true){
-
-                unFixedMenu();
-                flag = false;
-            }
-
-        }
-
-    });
-
-    list.addEventListener('click', e => {
-        if(e.target.classList.contains('sticky-button')){
-            e.target.classList.toggle('active');
-            menu.classList.toggle('active');
-        }
-    });
-
-    function fixedMenu(){
-        list.classList.add('sticky');
-        button.classList.add('sticky-button');
-        wrapper.append(search);
-        wrapper.append(basket);
-
-        // test tooltip
-        levusTooltip();
-    }
-
-    function unFixedMenu(){
-        list.classList.remove('sticky');
-        button.classList.remove('sticky-button');
-        search.remove();
-        basket.remove();
-    }
-}
- */
-
-
-
-/**
  * автоматичні тултіпи
  */
 
@@ -592,7 +413,7 @@ const lightboxDescription = GLightbox({
     const delay = 1000;
 
     // елементи
-    const tooltip = document.querySelectorAll('.sticky .levus-tooltip');
+    const tooltip = document.querySelectorAll('.levus-tooltip');
 
     if(localStorage.tooltip != 1){
 
@@ -624,9 +445,81 @@ const lightboxDescription = GLightbox({
             tooltip[tooltip.length - 1].classList.add('last');
         }
 
-        // localStorage.tooltip = 1;
+        localStorage.tooltip = 1;
 
-    }        
+    }
+
 }
 
-levusTooltip();
+/**
+ * mobile menu button
+ * mobile phone button
+ * input search
+ */
+{
+
+    const menuButton = document.getElementById('mobile-menu-button'),
+          list = document.getElementById('list'),
+          phoneButton = document.getElementById('mobile-phone-button'),
+          contact = document.getElementById('modal-contact'),
+          search = document.getElementById('search'),
+          searchOutput = document.getElementById('search-output')
+
+    // click to mobile button (menu)
+    menuButton.addEventListener('click', () => {
+
+        // switch button class
+        menuButton.classList.toggle('active');
+
+        // show/hide nav
+        list.classList.toggle('active');
+
+        // close other
+        phoneButton.classList.remove('active');
+        contact.classList.remove('active');
+
+        search.classList.remove('active');
+        searchOutput.classList.remove('active');
+        search.value = '';
+    });
+
+    // click to mobile button (phone)
+    phoneButton.addEventListener('click', () => {
+
+        // switch button class
+        phoneButton.classList.toggle('active');
+
+        // show/hide phones
+        contact.classList.toggle('active');
+
+        // close other
+        menuButton.classList.remove('active');
+        list.classList.remove('active');
+
+        search.classList.remove('active');
+        searchOutput.classList.remove('active');
+        search.value = '';
+    });
+
+    // click and input field search
+    search.addEventListener('click', () => {
+
+        // close other
+        phoneButton.classList.remove('active');
+        contact.classList.remove('active');
+        menuButton.classList.remove('active');
+        list.classList.remove('active');          
+    });
+
+    search.addEventListener('input', () => {
+
+        // view/hide block
+        if(!search.value){
+            search.classList.remove('active');
+            searchOutput.classList.remove('active');
+        } else {
+            searchOutput.classList.add('active');
+            search.classList.add('active');
+        }
+    });
+}

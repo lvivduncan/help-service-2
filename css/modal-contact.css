@@ -1,0 +1,38 @@
+#modal-contact{
+    padding: 10px 0;
+    text-align: center;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    width: 100%;
+    transition: .5s;
+    transform: translateY(-110px);
+    background: var(--gray-ultralight);
+    border-top: 3px solid var(--bg-block);
+    border-bottom: 3px solid var(--bg-block);
+}
+
+#modal-contact.active{
+    transform: translateY(90px);
+}
+
+#modal-contact ul{
+    display: block;
+}
+
+#modal-contact li{
+    display: inline-block;
+    padding: 10px;
+}
+
+#modal-contact li a{
+    text-decoration: none;
+}
+
+#modal-contact svg{
+    width:32px;
+    height: 32px;
+    fill: var(--green)
+}

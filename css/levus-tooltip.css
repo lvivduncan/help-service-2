@@ -1,17 +1,19 @@
 .levus-tooltip{
     position: relative;
+    height: 40px;
 }
 
 .levus-tooltip .content{
     display: block;
     position: absolute;
     left: calc(50% - 40px);
-    bottom: -240%;
+    /* bottom: -240%; */
+    top: 120%;
+    z-index: 2;
     width: 80px;
     padding: 10px 1px;
     background: var(--green-dark);
     color: var(--white)!important;
-    box-shadow: 0 0 10px rgb(236, 236, 236);
     text-align: center;
     text-indent: 0px;
     font-size: 16px;
@@ -48,10 +50,10 @@
 @media(max-width:776px) {
     /* перший елемент */
     .levus-tooltip.first .content{
-        left: calc(50% - 35px);
+        left: calc(50% - 30px);
     }
     .levus-tooltip.first .content::before{
-        left: calc(50% - 15px);
+        left: calc(50% - 20px);
     }
 
     /* останній */

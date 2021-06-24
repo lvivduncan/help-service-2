@@ -84,7 +84,7 @@ p{
 input{}
 
 input[type="search"]{
-    border: 3px solid var(--green);
+/*     border: 3px solid var(--green);
     outline: none;
     width: 100%;
     border-radius: var(--radius);
@@ -94,7 +94,7 @@ input[type="search"]{
     background-repeat: no-repeat;
     background-position: right .75rem center;
     background-size: 24px 24px;
-    padding: 16px 20px;
+    padding: 16px 20px; */
 }
 
 h1,

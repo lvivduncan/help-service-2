@@ -6,13 +6,19 @@
 
 @media(max-width:1240px) {
     #list{
-        display: none;
+        padding: 10px 0;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        width: 100%;
+        transition: .5s;
+        transform: translateY(-110px);
+        background: var(--gray-ultralight);
+        border-top: 3px solid var(--bg-block);
+        border-bottom: 3px solid var(--bg-block);
     }
 }
-/* 
-#list.sticky{
-    padding: 20px 0;
-} */
 
 #list .wrapper{
     grid-template-columns: auto 1fr;
@@ -21,32 +27,8 @@
     position: relative;
 }
 
-/* @media(max-width:1240px) {
-    #list .wrapper{
-        grid-template-columns: 100px 1fr 100px;
-        grid-gap: 20px;
-    }
-} */
-
-/* "притиснутий блок" */
-/* #list.sticky .wrapper{
-    grid-template-columns: 100px 1fr 100px;
-    grid-gap: 20px;    
-}
-
-@media(max-width:450px) {
-    #list.sticky .wrapper,
-    #list .wrapper{
-        grid-template-columns: auto 1fr auto;
-        grid-gap: 20px;
-    }
-} */
-
-/* button! */
 #list-button{
-    /* color: var(--green); */
     color: var(--dark);
-    /* font-size: 22px; */
     font-size: 18px;
     display: inline-block;
     padding-right: 20px;
@@ -57,52 +39,34 @@
     background-repeat: no-repeat;
 }
 
-/* @media(max-width:1240px) {
+@media(max-width:1240px) {
     #list-button{
-        text-indent: -9999px;
-
-        width: 32px;
-        height: 32px;
-        cursor: pointer;
-        padding: 0;
-
-        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='currentColor' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z'/%3E%3C/svg%3E");
-        background-size: 32px 32px;
+        display: none;
     }
-} */
-
-/* #list.sticky #list-button{
-    text-indent: -9999px;
-    cursor: pointer;
-    margin: 0 0 0 30px;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cg fill='%23036838'%3E%3Crect height='2' width='20' y='2' x='2'/%3E%3Crect height='2' width='20' y='11' x='2'/%3E%3Crect height='2' width='20' y='20' x='2'/%3E%3C/g%3E%3C/svg%3E");
-    
-    background-size: 24px 24px;
-    
-    width: 24px;
-    height: 24px;
 }
 
-#list.sticky #list-button.active {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23036838' viewBox='0 0 16 16'%3E%3Cpath d='M1.293 1.293a1 1 0 0 1 1.414 0L8 6.586l5.293-5.293a1 1 0 1 1 1.414 1.414L9.414 8l5.293 5.293a1 1 0 0 1-1.414 1.414L8 9.414l-5.293 5.293a1 1 0 0 1-1.414-1.414L6.586 8 1.293 2.707a1 1 0 0 1 0-1.414z'/%3E%3C/svg%3E");
-    background-size: 24px 24px;
-} */
+#list.sticky{
+    padding: 10px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    width: 100%;
+    transition: .5s;
+    transform: translateY(-110px);
+    background: var(--gray-ultralight);
+    border-top: 3px solid var(--bg-block);
+    border-bottom: 3px solid var(--bg-block);
+}
+
+#list.sticky #list-button{
+    display: none;
+}
 
 #list ul{
     display: grid;
     grid-template-columns: repeat(8,auto);
 }
-
-/* ховaємо на мобільних */
-/* @media(max-width:1240px) {
-    #list ul{
-        display: none;
-    }
-} */
-
-/* #list.sticky ul{
-    display: none;
-} */
 
 #list li{
     display: inline-block;
@@ -126,72 +90,20 @@
 #list li a:hover{
     color: var(--dark);
 }
-/* 
 
-
-@media(max-width:1240px) {
-    #list #search{
-        order: 2;
-    }
-
-    #list #basket{
-        order: 3;
-        margin: 0 13px 0 auto;
-    }
-} */
-
-/* мобільне меню (click) */
-/* #list.sticky ul.active{
-    position: absolute;
-    top: 90px;
-    left: 0;
-    display: block;
-    width: 280px;
-    border: 3px solid var(--green);
-    background: var(--white);
-    padding: 10px;
-    border-radius: 10px;
-
-    user-select: none;
+/* slicky active */
+#list.active{
+    transform: translateY(90px);
 }
 
-#list.sticky ul.active::before {
-    content: '';
+#list.active ul{
     display: inline-block;
-    width: 20px;
-    height: 20px;
-    border-left: 3px solid var(--green);
-    border-top: 3px solid var(--green);
-    border-radius: 3px;
-    background: var(--white);
-    transform: rotate(45deg);
-    position: absolute;
-    top: -12px;
-    left: 30px;
+    text-align: center;
 }
 
-#list.sticky ul.active li{
-    display: block;
+#list.active li{
+    display: inline-block;
+    padding: 10px;
     margin: 0;
-    padding: 10px 0;
     border: none;
-} */
-
-/* блок, де буде виводитися інформація по кліку */
-/* #list #view{
-    display: none;
-    position: absolute;
-    width: 100%;
 }
-
-#list #view.active{
-    display: block;
-    left: 0;
-    bottom: -20px;
-}
-
-#list #view .wrapper{
-    grid-template-columns: 1fr;
-    padding: 20px;
-    background: var(--white);
-} */

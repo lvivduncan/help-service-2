@@ -14,6 +14,9 @@
 /* модальний кошик */
 @import url('./modal-basket.css');
 
+/**/
+@import url('./modal-contact.css');
+
 /* 3 steps */
 @import url('./steps.css');
 

@@ -18,8 +18,8 @@
 
 /* прихований по дефолту */
 #levus-slider .levus-slide {
-    background-size: cover !important;
-    background-position: center !important;
+    /* background-size: cover !important; */
+    /* background-position: center !important; */
     height: 530px;
     width: 100%;
     visibility: hidden;
@@ -28,11 +28,11 @@
     left: 0;
 
     /* -webkit-transition: background 2s; */
-    transition: background 2s;
+    /* transition: background 2s; */
 }
 
 /* затемнення */
-#levus-slider .levus-slide::after {
+/* #levus-slider .levus-slide::after {
     content: '';
     display: block;
     position: absolute;
@@ -42,7 +42,36 @@
     bottom: 0;
     right: 0;
     background: rgba(255, 255, 255, 0.8);
+} */
+
+/* картинка замість фону */
+#levus-slider .levus-bg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 0;
 }
+
+#levus-slider .levus-bg source,
+#levus-slider .levus-bg img{
+    width: 100%!important;
+    height: 100%!important;
+    object-fit: cover;
+}
+
+#levus-slider .levus-bg::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
+    background: rgba(255, 255, 255, 0.8);
+}
+
 
 /* активний слайд */
 #levus-slider .levus-slide.show {

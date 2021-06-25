@@ -30,6 +30,26 @@
 }
 
 /* кнопка "у магазин" замість кнопки "кошик" */
+#to-shop{
+    text-decoration: none;
+}
+
+#to-shop span{
+    display: block;
+    text-align: center;
+    color: var(--dark)
+}
+
+@media(max-width:1240px) {
+    #to-shop span{
+        display: none;
+    }
+}
+
+#contact.active #to-shop span{
+    display: none;
+}
+
 #to-shop svg{
     width: 36px
 }

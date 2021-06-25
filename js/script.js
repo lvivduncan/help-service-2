@@ -14,79 +14,79 @@
  */
 
 {
-    const contact = document.getElementById('contact');
-
     // flag
     let checkOffset = false;
 
-    const menuButton = document.getElementById('mobile-menu-button'),
-          list = document.getElementById('list'),
-          phoneButton = document.getElementById('mobile-phone-button'),
-          modalContact = document.getElementById('modal-contact'),
-          search = document.getElementById('search'),
-          searchOutput = document.getElementById('search-output')
+    const nav = {
+        menuButton: document.getElementById('mobile-menu-button'),
+        list: document.getElementById('list'),
+        phoneButton: document.getElementById('mobile-phone-button'),
+        modalContact: document.getElementById('modal-contact'),
+        search: document.getElementById('search'),
+        searchOutput: document.getElementById('search-output'),
+        contact: document.getElementById('contact')
+    };
 
     // click to mobile button (menu)
-    menuButton.addEventListener('click', () => {
+    nav.menuButton.addEventListener('click', () => {
 
         // switch button class
-        menuButton.classList.toggle('active');
+        nav.menuButton.classList.toggle('active');
 
         // show/hide nav
-        list.classList.toggle('active');
+        nav.list.classList.toggle('active');
 
         // close other
-        phoneButton.classList.remove('active');
-        modalContact.classList.remove('active');
+        nav.phoneButton.classList.remove('active');
+        nav.modalContact.classList.remove('active');
 
-        search.classList.remove('active');
-        searchOutput.classList.remove('active');
-        search.value = '';
+        nav.search.classList.remove('active');
+        nav.searchOutput.classList.remove('active');
+        nav.search.value = '';
     });
 
     // click to mobile button (phone)
-    phoneButton.addEventListener('click', () => {
+    nav.phoneButton.addEventListener('click', () => {
 
         // switch button class
-        phoneButton.classList.toggle('active');
+        nav.phoneButton.classList.toggle('active');
 
         // show/hide phones
-        modalContact.classList.toggle('active');
+        nav.modalContact.classList.toggle('active');
 
         // close other
-        menuButton.classList.remove('active');
-        list.classList.remove('active');
+        nav.menuButton.classList.remove('active');
+        nav.list.classList.remove('active');
 
-        search.classList.remove('active');
-        searchOutput.classList.remove('active');
-        search.value = '';
+        nav.search.classList.remove('active');
+        nav.searchOutput.classList.remove('active');
+        nav.search.value = '';
     });
 
     // click and input field search
-    search.addEventListener('click', () => {
+    nav.search.addEventListener('click', () => {
 
         // close other
-        phoneButton.classList.remove('active');
-        modalContact.classList.remove('active');
-        menuButton.classList.remove('active');
-        list.classList.remove('active');          
+        nav.phoneButton.classList.remove('active');
+        nav.modalContact.classList.remove('active');
+        nav.menuButton.classList.remove('active');
+        nav.list.classList.remove('active');          
     });
 
-    search.addEventListener('input', () => {
+    nav.search.addEventListener('input', () => {
 
         // view/hide block
-        if(!search.value){
-            search.classList.remove('active');
-            searchOutput.classList.remove('active');
+        if(!nav.search.value){
+            nav.search.classList.remove('active');
+            nav.searchOutput.classList.remove('active');
         } else {
-            searchOutput.classList.add('active');
-            search.classList.add('active');
+            nav.searchOutput.classList.add('active');
+            nav.search.classList.add('active');
         }
     });
 
     window.addEventListener('scroll', () => {
 
-        // const list = document.getElementById('list');
         const listOffset = list.getBoundingClientRect().top;
         const headerOffset = document.getElementById('header').getBoundingClientRect().top;
 
@@ -94,8 +94,8 @@
             
             if(!checkOffset){
                 
-                contact.classList.add('active');
-                list.classList.add('sticky');
+                nav.contact.classList.add('active');
+                nav.list.classList.add('sticky');
                 checkOffset = true;
             }
 
@@ -105,8 +105,8 @@
             
             if(checkOffset){
                 
-                contact.classList.remove('active');
-                list.classList.remove('sticky');
+                nav.contact.classList.remove('active');
+                nav.list.classList.remove('sticky');
                 checkOffset = false;
             }
             
@@ -114,12 +114,12 @@
 
         // clear class menu
         setTimeout(() => {
-            phoneButton.classList.remove('active');
-            modalContact.classList.remove('active');
-            menuButton.classList.remove('active');
-            list.classList.remove('active');
-            search.classList.remove('active');
-            searchOutput.classList.remove('active');            
+            nav.phoneButton.classList.remove('active');
+            nav.modalContact.classList.remove('active');
+            nav.menuButton.classList.remove('active');
+            nav.list.classList.remove('active');
+            nav.search.classList.remove('active');
+            nav.searchOutput.classList.remove('active');            
         }, 50);
 
     });
@@ -200,63 +200,67 @@
 {
     const scroll = document.querySelectorAll('.levus-horizontal-scroll');
 
-    scroll.forEach(item => {
-        const ul = item.querySelector('ul');
-        // elements
-        let li = ul.querySelectorAll('li');
+    if(scroll !== undefined){
 
-        // if less than 4, cloned 
-        if (li.length <= 4) {
-            // cloned and append elements
-            li.forEach(element => ul.append(element.cloneNode(true)));
-            // new nodelist
-            li = item.querySelectorAll('li');
-        }
-
-        item.innerHTML += '<div class="levus-nav"><span class="left"></span><span class="right"></span></div>';
-
-        item.addEventListener('click', e => {
+        scroll.forEach(item => {
             const ul = item.querySelector('ul');
-            if (e.target.className == 'left') {
-                // move last element
-                const last = ul.lastElementChild;
-                ul.prepend(last);
-                // destroy transition
-                ul.style.transition = 'none';
-                ul.classList.add('to-right');
-                setTimeout(() => {
-                    ul.classList.remove('to-right');
-                    ul.style.transition = '.5s';
-                }, 50);
+            // elements
+            let li = ul.querySelectorAll('li');
+
+            // if less than 4, cloned 
+            if (li.length <= 4) {
+                // cloned and append elements
+                li.forEach(element => ul.append(element.cloneNode(true)));
+                // new nodelist
+                li = item.querySelectorAll('li');
             }
+
+            item.innerHTML += '<div class="levus-nav"><span class="left"></span><span class="right"></span></div>';
+
+            item.addEventListener('click', e => {
+                const ul = item.querySelector('ul');
+                if (e.target.className == 'left') {
+                    // move last element
+                    const last = ul.lastElementChild;
+                    ul.prepend(last);
+                    // destroy transition
+                    ul.style.transition = 'none';
+                    ul.classList.add('to-right');
+                    setTimeout(() => {
+                        ul.classList.remove('to-right');
+                        ul.style.transition = '.5s';
+                    }, 50);
+                }
+            });
+
+            item.addEventListener('click', e => {
+                const ul = item.querySelector('ul');
+                if (e.target.className == 'right') {
+                    // move first element
+                    const first = ul.firstElementChild;
+                    ul.append(first);
+                    // destroy transition
+                    ul.style.transition = 'none';
+                    ul.classList.add('to-left');
+                    setTimeout(() => {
+                        ul.classList.remove('to-left');
+                        ul.style.transition = '.5s';
+                    }, 50);
+                }
+            });
         });
 
-        item.addEventListener('click', e => {
-            const ul = item.querySelector('ul');
-            if (e.target.className == 'right') {
-                // move first element
-                const first = ul.firstElementChild;
-                ul.append(first);
-                // destroy transition
-                ul.style.transition = 'none';
-                ul.classList.add('to-left');
-                setTimeout(() => {
-                    ul.classList.remove('to-left');
-                    ul.style.transition = '.5s';
-                }, 50);
-            }
-        });
-    });
+        // заміна великого фото при наведенні
+        const full = document.querySelector('#item-image-full img');
+        const thumbs = document.querySelectorAll('#item-thumbs img');
 
-    // заміна великого фото при наведенні
-    const full = document.querySelector('#item-image-full img');
-    const thumbs = document.querySelectorAll('#item-thumbs img');
-
-    thumbs.forEach(thumb => {
-        thumb.addEventListener('mouseover', () => {
-            full.src = thumb.src;
+        thumbs.forEach(thumb => {
+            thumb.addEventListener('mouseover', () => {
+                full.src = thumb.src;
+            });
         });
-    });
+    }
+    
 }
 
 // lightbox
@@ -432,6 +436,7 @@ const lightboxDescription = GLightbox({
  */
 {
     if(document.getElementById('filter-price') != null){
+        
         // ліве поле (мінімум)
         const min = document.getElementById('filter-price-min');
 

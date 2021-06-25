@@ -103,7 +103,12 @@
 
 #list.active li{
     display: inline-block;
-    padding: 10px;
+    padding: 0;
     margin: 0;
     border: none;
+}
+
+#list.active li a{
+    padding: 10px;
+    display: inline-block;
 }

@@ -19,12 +19,78 @@
     // flag
     let checkOffset = false;
 
+    const menuButton = document.getElementById('mobile-menu-button'),
+          list = document.getElementById('list'),
+          phoneButton = document.getElementById('mobile-phone-button'),
+          modalContact = document.getElementById('modal-contact'),
+          search = document.getElementById('search'),
+          searchOutput = document.getElementById('search-output')
+
+    // click to mobile button (menu)
+    menuButton.addEventListener('click', () => {
+
+        // switch button class
+        menuButton.classList.toggle('active');
+
+        // show/hide nav
+        list.classList.toggle('active');
+
+        // close other
+        phoneButton.classList.remove('active');
+        modalContact.classList.remove('active');
+
+        search.classList.remove('active');
+        searchOutput.classList.remove('active');
+        search.value = '';
+    });
+
+    // click to mobile button (phone)
+    phoneButton.addEventListener('click', () => {
+
+        // switch button class
+        phoneButton.classList.toggle('active');
+
+        // show/hide phones
+        modalContact.classList.toggle('active');
+
+        // close other
+        menuButton.classList.remove('active');
+        list.classList.remove('active');
+
+        search.classList.remove('active');
+        searchOutput.classList.remove('active');
+        search.value = '';
+    });
+
+    // click and input field search
+    search.addEventListener('click', () => {
+
+        // close other
+        phoneButton.classList.remove('active');
+        modalContact.classList.remove('active');
+        menuButton.classList.remove('active');
+        list.classList.remove('active');          
+    });
+
+    search.addEventListener('input', () => {
+
+        // view/hide block
+        if(!search.value){
+            search.classList.remove('active');
+            searchOutput.classList.remove('active');
+        } else {
+            searchOutput.classList.add('active');
+            search.classList.add('active');
+        }
+    });
+
     window.addEventListener('scroll', () => {
 
-        const list = document.getElementById('list');
-        const offset = list.getBoundingClientRect().top;
+        // const list = document.getElementById('list');
+        const listOffset = list.getBoundingClientRect().top;
+        const headerOffset = document.getElementById('header').getBoundingClientRect().top;
 
-        if(offset < 3) {
+        if(listOffset < 1) {
             
             if(!checkOffset){
                 
@@ -32,8 +98,10 @@
                 list.classList.add('sticky');
                 checkOffset = true;
             }
-            
-        } else {
+
+        }
+
+        if(headerOffset > -10){
             
             if(checkOffset){
                 
@@ -41,13 +109,22 @@
                 list.classList.remove('sticky');
                 checkOffset = false;
             }
-
+            
         }
+
+        // clear class menu
+        setTimeout(() => {
+            phoneButton.classList.remove('active');
+            modalContact.classList.remove('active');
+            menuButton.classList.remove('active');
+            list.classList.remove('active');
+            search.classList.remove('active');
+            searchOutput.classList.remove('active');            
+        }, 50);
 
     });
 
 }
-
 
 /**
  * вкладки
@@ -449,77 +526,4 @@ const lightboxDescription = GLightbox({
 
     }
 
-}
-
-/**
- * mobile menu button
- * mobile phone button
- * input search
- */
-{
-
-    const menuButton = document.getElementById('mobile-menu-button'),
-          list = document.getElementById('list'),
-          phoneButton = document.getElementById('mobile-phone-button'),
-          contact = document.getElementById('modal-contact'),
-          search = document.getElementById('search'),
-          searchOutput = document.getElementById('search-output')
-
-    // click to mobile button (menu)
-    menuButton.addEventListener('click', () => {
-
-        // switch button class
-        menuButton.classList.toggle('active');
-
-        // show/hide nav
-        list.classList.toggle('active');
-
-        // close other
-        phoneButton.classList.remove('active');
-        contact.classList.remove('active');
-
-        search.classList.remove('active');
-        searchOutput.classList.remove('active');
-        search.value = '';
-    });
-
-    // click to mobile button (phone)
-    phoneButton.addEventListener('click', () => {
-
-        // switch button class
-        phoneButton.classList.toggle('active');
-
-        // show/hide phones
-        contact.classList.toggle('active');
-
-        // close other
-        menuButton.classList.remove('active');
-        list.classList.remove('active');
-
-        search.classList.remove('active');
-        searchOutput.classList.remove('active');
-        search.value = '';
-    });
-
-    // click and input field search
-    search.addEventListener('click', () => {
-
-        // close other
-        phoneButton.classList.remove('active');
-        contact.classList.remove('active');
-        menuButton.classList.remove('active');
-        list.classList.remove('active');          
-    });
-
-    search.addEventListener('input', () => {
-
-        // view/hide block
-        if(!search.value){
-            search.classList.remove('active');
-            searchOutput.classList.remove('active');
-        } else {
-            searchOutput.classList.add('active');
-            search.classList.add('active');
-        }
-    });
 }

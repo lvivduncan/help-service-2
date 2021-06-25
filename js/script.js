@@ -273,87 +273,92 @@ const lightboxDescription = GLightbox({
     // const basket = document.getElementById('basket');
     const modalBasket = document.getElementById('modal-basket');
 
-    modalBasket.className = 'display-none';
+    // кошика може не бути
+    if(!modalBasket !== null){
 
-    // create modal window
-    const modal = document.createElement('div');
-    modal.setAttribute('id', 'modal-wrapper');
+        modalBasket.className = 'display-none';
 
-    const close = document.createElement('div');
-    close.setAttribute('id', 'modal-button-close');
+        // create modal window
+        const modal = document.createElement('div');
+        modal.setAttribute('id', 'modal-wrapper');
 
-    // open-close
-    document.addEventListener('click', e => {        
-        if(e.target.id === 'basket' || e.target.id === 'basket-sum' || e.target.id === 'checkout-edit'){
-            // e.preventDefault();
+        const close = document.createElement('div');
+        close.setAttribute('id', 'modal-button-close');
+
+        // open-close
+        document.addEventListener('click', e => {        
+            if(e.target.id === 'basket' || e.target.id === 'basket-sum' || e.target.id === 'checkout-edit'){
+                // e.preventDefault();
+            
+                // add modal
+                document.body.className = 'modal-body-fixed';
+                document.body.append(modal);
         
-            // add modal
-            document.body.className = 'modal-body-fixed';
-            document.body.append(modal);
-    
-            // close button
-            modalBasket.append(close);
+                // close button
+                modalBasket.append(close);
 
-            // show mobile basket
-            modalBasket.className = '';
-        }
+                // show mobile basket
+                modalBasket.className = '';
+            }
 
-        if(e.target.id == 'modal-wrapper' || e.target.id === 'modal-button-close'){
+            if(e.target.id == 'modal-wrapper' || e.target.id === 'modal-button-close'){
 
-            // clear and close modal
-            document.body.className = '';
-            modal.remove();
-            close.remove();
-            modalBasket.className = 'display-none';
+                // clear and close modal
+                document.body.className = '';
+                modal.remove();
+                close.remove();
+                modalBasket.className = 'display-none';
 
-        }
-    });
-
-    // close 'esc'
-    document.addEventListener('keydown', e => {
-        if(e.code === 'Escape' || e.key === 'Escape'){
-
-            // clear and close modal
-            document.body.className = '';
-            modal.remove();
-            modalBasket.className = 'display-none';
-        }
-    });
-
-
-    
-    // create checkout edit button
-    const checkoutGoods = document.getElementById('checkout-goods');
-    
-    // check empty
-    if(checkoutGoods !== null){
-
-        const checkoutEdit = document.createElement('div');
-        checkoutEdit.setAttribute('id', 'checkout-edit');
-        checkoutGoods.append(checkoutEdit);
-
-        // checkout tabs
-        const checkoutInfoButton = document.querySelector('.checkout-info');
-        const checkoutGoodsButton = document.querySelector('.checkout-goods');
-
-        const checkoutInfoData = document.getElementById('checkout-info');
-        const checkoutGoodsData = document.getElementById('checkout-goods');
-
-        checkoutInfoButton.addEventListener('click', () => {
-            checkoutInfoData.classList.add('active');
-            checkoutGoodsData.classList.remove('active');
-
-            checkoutInfoButton.classList.add('active');
-            checkoutGoodsButton.classList.remove('active');
+            }
         });
 
-        checkoutGoodsButton.addEventListener('click', () => {
-            checkoutGoodsData.classList.add('active');
-            checkoutInfoData.classList.remove('active');
+        // close 'esc'
+        document.addEventListener('keydown', e => {
+            if(e.code === 'Escape' || e.key === 'Escape'){
 
-            checkoutGoodsButton.classList.add('active');
-            checkoutInfoButton.classList.remove('active');
+                // clear and close modal
+                document.body.className = '';
+                modal.remove();
+                modalBasket.className = 'display-none';
+            }
         });
+
+
+        
+        // create checkout edit button
+        const checkoutGoods = document.getElementById('checkout-goods');
+        
+        // check empty
+        if(checkoutGoods !== null){
+
+            const checkoutEdit = document.createElement('div');
+            checkoutEdit.setAttribute('id', 'checkout-edit');
+            checkoutGoods.append(checkoutEdit);
+
+            // checkout tabs
+            const checkoutInfoButton = document.querySelector('.checkout-info');
+            const checkoutGoodsButton = document.querySelector('.checkout-goods');
+
+            const checkoutInfoData = document.getElementById('checkout-info');
+            const checkoutGoodsData = document.getElementById('checkout-goods');
+
+            checkoutInfoButton.addEventListener('click', () => {
+                checkoutInfoData.classList.add('active');
+                checkoutGoodsData.classList.remove('active');
+
+                checkoutInfoButton.classList.add('active');
+                checkoutGoodsButton.classList.remove('active');
+            });
+
+            checkoutGoodsButton.addEventListener('click', () => {
+                checkoutGoodsData.classList.add('active');
+                checkoutInfoData.classList.remove('active');
+
+                checkoutGoodsButton.classList.add('active');
+                checkoutInfoButton.classList.remove('active');
+            });
+        }
+
     }
 
 

@@ -2,10 +2,10 @@
 
 // window.onload = function(){
     
-    if(window.innerWidth < 1100){
+    // if(window.innerWidth < 1100){
 
-        levusTooltip();
-    }
+    //     levusTooltip();
+    // }
     
 // }
 
@@ -436,7 +436,7 @@ const lightboxDescription = GLightbox({
  */
 {
     if(document.getElementById('filter-price') != null){
-        
+
         // ліве поле (мінімум)
         const min = document.getElementById('filter-price-min');
 
@@ -499,7 +499,7 @@ const lightboxDescription = GLightbox({
 /**
  * автоматичні тултіпи
  */
-
+/* 
  function levusTooltip(){
     // затримка
     const delay = 1000;
@@ -542,3 +542,4 @@ const lightboxDescription = GLightbox({
     }
 
 }
+ */

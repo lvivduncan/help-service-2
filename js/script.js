@@ -274,7 +274,7 @@ const lightboxDescription = GLightbox({
     const modalBasket = document.getElementById('modal-basket');
 
     // кошика може не бути
-    if(!modalBasket !== null){
+    if(modalBasket !== null){
 
         modalBasket.className = 'display-none';
 

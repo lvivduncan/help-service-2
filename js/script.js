@@ -372,52 +372,57 @@ const lightboxDescription = GLightbox({
     // mobile basket
     const modalBasket = document.getElementById('modal-basket');
 
-    // quantity
-    const quantity = modalBasket.querySelector('#modal-basket-number stong');
+    // кошика може не бути
+    if(modalBasket !== null){
 
-    // todo: quantity
+        // quantity
+        const quantity = modalBasket.querySelector('#modal-basket-number stong');
 
-    // sum
-    const sum = modalBasket.querySelector('#modal-sum span');
+        // todo: quantity
 
-    // todo: sum
+        // sum
+        const sum = modalBasket.querySelector('#modal-sum span');
 
-    // todo: change number from keyboard
+        // todo: sum
+
+        // todo: change number from keyboard
 
 
-    // virtual dom
-    modalBasket.addEventListener('click', e => {
-        
-        // видаляємо товар
-        if(e.target.classList == 'product-button-delete'){
-            e.target.parentElement.parentElement.remove();
-        }
-
-        // click minus
-        if(e.target.className == 'minus'){
-
-            const article = e.target.parentElement.parentElement;
-            const number = article.querySelector('.number');
-
-            // check 0
-            if(number.value == 1){
-                number.parentElement.parentElement.parentElement.remove();
-            } else {
-                number.value = +number.value - 1;
+        // virtual dom
+        modalBasket.addEventListener('click', e => {
+            
+            // видаляємо товар
+            if(e.target.classList == 'product-button-delete'){
+                e.target.parentElement.parentElement.remove();
             }
 
-        }
+            // click minus
+            if(e.target.className == 'minus'){
 
-        // click plus
-        if(e.target.className == 'plus'){
+                const article = e.target.parentElement.parentElement;
+                const number = article.querySelector('.number');
 
-            const article = e.target.parentElement.parentElement;
-            const number = article.querySelector('.number');
-            number.value = +number.value + 1;
+                // check 0
+                if(number.value == 1){
+                    number.parentElement.parentElement.parentElement.remove();
+                } else {
+                    number.value = +number.value - 1;
+                }
 
-        }
+            }
 
-    });
+            // click plus
+            if(e.target.className == 'plus'){
+
+                const article = e.target.parentElement.parentElement;
+                const number = article.querySelector('.number');
+                number.value = +number.value + 1;
+
+            }
+
+        });
+
+    }
 
 }
 

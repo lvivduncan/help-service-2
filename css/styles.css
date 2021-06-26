@@ -41,7 +41,8 @@
 /* carousel */
 @import url('./levus-slider.css');
 
-/* @import url('./animate.css'); */
+/* Наші послуги */
+@import url('./service.css');
 
 /* три переваги */
 @import url('./promo.css');

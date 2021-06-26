@@ -33,6 +33,11 @@
     color: var(--green);
 }
 
+#footer svg{
+    width: 26px;
+    fill: var(--green);
+}
+
 /* цопірайт */
 #copy{
     width: 1200px;

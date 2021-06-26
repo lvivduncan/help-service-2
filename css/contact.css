@@ -16,7 +16,13 @@
 
 #contact .wrapper p{
     margin: 10px 0;
-    /* font-size: 14px; */
+}
+
+
+/* уніфікуємо усі іконки */
+#contact svg{
+    width: 32px;
+    fill: var(--green);
 }
 
 /* іконка мобілки трохи завелика */
@@ -50,9 +56,9 @@
     display: none;
 }
 
-#to-shop svg{
+/* #to-shop svg{
     width: 36px
-}
+} */
 
 /* ////////////////////////////////
 робимо блок фіксованим після скролу

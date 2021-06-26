@@ -38,6 +38,10 @@
     fill: var(--green);
 }
 
+#footer a svg{
+    width: auto;
+}
+
 /* цопірайт */
 #copy{
     width: 1200px;

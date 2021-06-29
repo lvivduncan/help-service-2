@@ -69,7 +69,8 @@
 
 .levus-horizontal-scroll li{
     display: block;
-    border: 20px solid var(--white);
+    border: 10px solid var(--white);
+    /* outline: 10px solid var(--white); */
 }
 
 .levus-horizontal-scroll img {

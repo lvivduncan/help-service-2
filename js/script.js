@@ -198,7 +198,7 @@
  * мініатюри і скрол
  */
 {
-    const scroll = document.querySelectorAll('.levus-horizontal-scroll');
+    const scroll = document.querySelectorAll('#item .levus-horizontal-scroll');
 
     if(scroll !== undefined){
 
@@ -496,50 +496,82 @@ const lightboxDescription = GLightbox({
     });
 }
 
-/**
- * автоматичні тултіпи
- */
-/* 
- function levusTooltip(){
-    // затримка
-    const delay = 1000;
+// 28-06-2021
+{
+    // scroll
+    const scroll = document.querySelectorAll('#feedback .levus-horizontal-scroll');
 
-    // елементи
-    const tooltip = document.querySelectorAll('.levus-tooltip');
+    scroll.forEach(item => {
+        const ul = item.querySelector('ul');
 
-    if(localStorage.tooltip != 1){
+        // elements
+        let li = ul.querySelectorAll('li');
 
-        // швидше працює
-        for(let i = 0; i<tooltip.length; i++){
+        // if less than 4, cloned 
+        if (li.length <= 4) {
 
-            // створили елемент
-            const span = document.createElement('span');
+            // cloned and append elements
+            li.forEach(element => ul.append(element.cloneNode(true)));
 
-            // додали клас для вибірки
-            span.setAttribute('class', 'content');
-
-            // отримали контент з атрибута
-            const title = tooltip[i].ariaLabel;
-
-            // встановили затримку
-            span.style.animationDelay = `${delay * i}ms`;
-
-            // поклали дані з атрибута у тултіп
-            span.append(title);
-
-            // додали в тег
-            tooltip[i].append(span);
-
-            // додатковий клас для першого
-            tooltip[0].classList.add('first');
-
-            // додатковий клас для останнього
-            tooltip[tooltip.length - 1].classList.add('last');
+            // new nodelist
+            li = item.querySelectorAll('li');
         }
 
-        localStorage.tooltip = 1;
+        // item.innerHTML += '<div class="levus-nav"><span class="left"></span><span class="right"></span></div>';
+/* 
+        item.addEventListener('click', e => {
+            const ul = item.querySelector('ul');
+            if (e.target.className == 'left') {
 
-    }
+                // move last element
+                const last = ul.lastElementChild;
+                ul.prepend(last);
 
-}
+                // destroy transition
+                ul.style.transition = 'none';
+                ul.classList.add('to-right');
+                setTimeout(() => {
+                    ul.classList.remove('to-right');
+                    ul.style.transition = '.5s';
+                }, 50);
+            }
+        });
+
+        item.addEventListener('click', e => {
+            const ul = item.querySelector('ul');
+            if (e.target.className == 'right') {
+
+                // move first element
+                const first = ul.firstElementChild;
+                ul.append(first);
+
+                // destroy transition
+                ul.style.transition = 'none';
+                ul.classList.add('to-left');
+                setTimeout(() => {
+                    ul.classList.remove('to-left');
+                    ul.style.transition = '.5s';
+                }, 50);
+            }
+        });
  */
+        setInterval(() => {
+            const ul = item.querySelector('ul');
+
+            // move first element
+            const first = ul.firstElementChild;
+            ul.append(first);
+
+            // destroy transition
+            ul.style.transition = 'none';
+            ul.classList.add('to-left');
+
+            setTimeout(() => {
+                ul.classList.remove('to-left');
+                ul.style.transition = '.5s';
+            }, 50);
+         
+        }, 3500);
+        
+    });
+}

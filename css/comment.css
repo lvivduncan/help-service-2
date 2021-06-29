@@ -1,0 +1,112 @@
+#comment{
+    padding: 70px 0;
+    background: var(--bg-block);
+}
+
+#comment .wrapper{
+    background: url('../images/comment.svg') no-repeat left center / contain;
+    padding: 0 0 0 36%;
+    min-height: 450px;
+}
+
+@media(min-width:1240px) {
+    #comment .wrapper{
+        padding: 0 0 0 30%;
+    }    
+}
+
+@media(max-width:996px) {
+    #comment .wrapper{
+        background-size: 35%;
+    }    
+}
+
+@media(max-width:776px) {
+    #comment .wrapper{
+        background: transparent;
+        padding: 0;
+    }
+}
+
+#comment h2{
+    text-align: center;
+}
+
+#comment label{
+    display: block;
+    margin: 0 0 20px;
+    cursor: pointer;
+}
+
+#comment input[type="text"]{
+    border: 3px solid var(--green);
+    outline: none;
+    width: 100%;
+    border-radius: var(--radius);
+    background-repeat: no-repeat;
+    background-position: right .75rem center;
+    background-size: 24px 24px;
+    padding: 16px 20px;
+    font-family: inherit;
+}
+
+#comment textarea{
+    border: 3px solid var(--green);
+    outline: none;
+    width: 100%;
+    border-radius: var(--radius-15);
+    background-repeat: no-repeat;
+    background-position: right .75rem center;
+    background-size: 24px 24px;
+    padding: 16px 20px;
+    height: 140px;
+    resize: none;
+    font-family: inherit;
+}
+
+#comment .like-comment{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#comment .like-comment span{
+    border-bottom: 2px dashed var(--gray-dark);
+    display: inline-block;
+    padding: 0 0 5px;
+    margin: 0 0 0 5px;
+    pointer-events: none;
+}
+
+#comment .like-comment input{
+    width: 20px;
+    height: 20px;
+}
+
+#comment .like-comment input:checked + span{
+    border-color: var(--green);
+    color: var(--green);
+}
+
+#comment button{
+    margin: 0 10px 0 0;
+    display: inline-block;
+    padding: 15px 25px;
+    border-radius: var(--radius);
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    background: var(--white);
+    color: var(--gray-dark);
+    border: 2px solid var(--gray-dark);
+    padding: 14px 23px;
+    cursor: pointer;
+    display: inherit;
+    margin: auto;
+    transition: .5s;
+}
+
+#comment button:hover{
+    border-color: var(--green);
+    color: var(--green);
+}

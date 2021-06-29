@@ -1,0 +1,32 @@
+#feedback{
+    padding: 60px 0;
+}
+
+#feedback h2{
+    text-align: center;
+    margin: 0 0 30px;
+}
+
+#feedback .item{
+    padding: 0 30px;
+}
+
+#feedback blockquote{
+    color: var(--gray-light);
+    font-style: italic;
+    text-align: center;
+    margin: 0 0 20px;
+}
+
+#feedback .author{
+    font-weight: 600;
+    margin: 0 0 20px;
+    text-align: center;
+}
+
+#feedback svg{
+    width: 26px;
+    margin: auto auto 20px;
+    display: block;
+    fill: var(--green);
+}

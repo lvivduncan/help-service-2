@@ -1,0 +1,26 @@
+.map{
+    margin: 60px 0 0;
+}
+
+.map h2{
+    margin: 0 0 30px;
+    text-align: center;
+    padding: 0 20px;
+}
+
+@media(max-width: 776px) {
+    .map h2{
+        font-size: 24px;
+    }    
+}
+
+.map iframe{
+    width: 100%!important;
+    height: 600px;
+}
+
+@media(max-width:776px) {
+    .map iframe{
+        height: 400px;
+    }
+}

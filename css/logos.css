@@ -1,10 +1,19 @@
 .logos{
     margin: 60px 0;
+    background: var(--gray-ultralight);
+    padding: 60px 0;
 }
 
 .logos h2{
     text-align: center;
     margin: 0 0 30px;
+    padding: 0 20px;
+}
+
+@media(max-width:776px) {
+    .logos h2{
+        font-size: 24px;
+    }
 }
 
 .logos .wrapper{

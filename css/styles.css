@@ -28,6 +28,9 @@
 /* nav -- category */
 @import url('./list.css');
 
+/* одинокий блок зі заголовком, текстом та фото */
+@import url('./single-article.css');
+
 /**/
 @import url('./levus-tooltip.css');
 

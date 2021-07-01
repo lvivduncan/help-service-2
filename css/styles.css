@@ -35,7 +35,16 @@
 @import url('./bonus.css');
 
 /* одинокий блок без фото */
-@import url('./lead.css');
+@import url('./text-article.css');
+
+/* блог-пост */
+@import url('./blog-post.css');
+
+/* soc buttons */
+@import url('./social-button.css');
+
+/* Відстежити замовлення */
+@import url('./track.css');
 
 /**/
 @import url('./levus-tooltip.css');

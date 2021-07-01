@@ -1,0 +1,46 @@
+.text-article{
+    margin: 60px 0;
+}
+
+.text-article h2{
+    font-size: 30px;
+    margin: 0 0 30px;
+}
+
+.text-article p + p{
+    margin: 30px 0 0;
+}
+
+.text-article ul{
+    margin: 30px 0 30px 60px;
+}
+
+.text-article li{
+    margin: 30px 0;
+    display: block;
+    position: relative;
+    padding: 0 100px 0 60px;
+    color: var(--gray-light);
+    transition: .5s;
+}
+
+.text-article li:hover{
+    color: var(--green-dark);
+    cursor: default;
+}
+
+.text-article li::before{
+    content: '';
+    width: 32px;
+    height: 32px;
+    display: inline-block;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23006837' viewBox='0 0 16 16'%3E%3Cpath d='M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z'/%3E%3Cpath d='M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z'/%3E%3C/svg%3E");
+    position: absolute;
+    top: calc(50% - 16px);
+    left: 0;
+    transition: .5s;
+}
+
+.text-article li:hover::before{
+    transform: scale(1.2);
+}

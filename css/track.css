@@ -1,0 +1,43 @@
+#track{
+    margin: 60px 0;
+    background: var(--bg-block);
+    padding: 60px 0;
+}
+
+#track .wrapper{
+    grid-template-columns: 1fr auto;
+    grid-gap: 30px;
+}
+
+@media(max-width:540px) {
+    #track .wrapper{
+        grid-template-columns: 1fr;
+    }    
+}
+
+#track input{
+    border: 3px solid var(--green);
+    outline: none;
+    border-radius: var(--radius);
+    padding: 16px 20px;
+}
+
+#track button{
+    display: inline-block;
+    padding: 15px 25px;
+    border-radius: var(--radius);
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+
+    background: var(--gradient);
+    color: var(--white);
+
+    border: 2px solid var(--green);
+    padding: 14px 23px;
+    cursor: pointer;
+}
+
+#track button:hover{
+    background: var(--green);
+}

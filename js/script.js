@@ -528,3 +528,66 @@ const lightboxDescription = GLightbox({
         
     });
 }
+
+// social-buttons
+{
+    // facebook
+    const facebook = document.querySelectorAll('.share-facebook');
+    
+    // twitter
+    const twitter = document.querySelectorAll('.share-twitter');
+    
+    // linkedin
+    const linkedin = document.querySelectorAll('.share-linkedin');
+    
+    // telegram
+    const telegram = document.querySelectorAll('.share-telegram');
+    
+    // viber
+    const viber = document.querySelectorAll('.share-viber');
+    
+    facebook.forEach(item => {
+        item.addEventListener('click', e => {
+        e.preventDefault();
+        const url = 'https://facebook.com/sharer.php?display=popup&u=' + window.location.href;
+        const options = 'toolbar=0,status=0,resizable=1,width=626,height=436';
+        window.open(url, 'sharer', options);
+        });
+    });
+    
+    twitter.forEach(item => {
+        item.addEventListener('click', e => {
+        e.preventDefault();
+        const url = 'https://twitter.com/intent/tweet?text=' + document.title + ' ' + window.location.href;
+        const options = 'toolbar=0,status=0,resizable=1,width=626,height=436';
+        window.open(url, 'twitter', options);
+        });
+    });
+    
+    linkedin.forEach(item => {
+        item.addEventListener('click', e => {
+        e.preventDefault();
+        const url = 'https://linkedin.com/shareArticle?mini=true&url=' + window.location.href + '&title=' + document.title;
+        const options = 'toolbar=0,status=0,resizable=1,width=626,height=436';
+        window.open(url, 'linkedin', options);
+        });
+    });
+    
+    telegram.forEach(item => {
+        item.addEventListener('click', e => {
+        e.preventDefault();
+        const url = 'https://telegram.me/share/url?url=' + window.location.href + '&text=' + document.title;
+        const options = 'toolbar=0,status=0,resizable=1,width=626,height=436';
+        window.open(url, 'telegram', options);
+        });
+    });
+    
+    viber.forEach(item => {
+        item.addEventListener('click', e => {
+        e.preventDefault();
+        const url = 'viber://forward?text=' + document.title + ' ' + window.location.href;
+        const options = 'toolbar=0,status=0,resizable=1,width=626,height=436';
+        window.open(url, 'viber', options);
+        });
+    });
+}

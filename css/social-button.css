@@ -1,0 +1,58 @@
+.share{
+    margin: 40px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+@media(max-width:450px) {
+    .share{
+        flex-wrap: wrap;
+        justify-content: stretch;
+    }
+}
+
+.share-facebook,
+.share-twitter,
+.share-twitter,
+.share-linkedin,
+.share-telegram,
+.share-viber{
+    text-decoration: none;
+    color: var(--white);
+    font-size: 10px;
+    text-transform: uppercase;
+    padding: 5px 8px;
+    /* display: inline-block; */
+}
+
+@media(max-width:450px) {
+    .share-facebook,
+    .share-twitter,
+    .share-twitter,
+    .share-linkedin,
+    .share-telegram,
+    .share-viber{
+        width: 50%;
+        padding: 12px 8px;
+    } 
+}
+
+.share-facebook{
+    background:#314d91;
+}
+
+.share-twitter{
+    background:#07beed;
+}
+
+.share-linkedin{
+    background:#0072b5;
+}
+
+.share-telegram{
+    background:#38a6db;
+}
+
+.share-viber{
+    background:#7360f2;
+}

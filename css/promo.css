@@ -1,9 +1,9 @@
 
-#promo{
+.promo{
     margin: 60px 0
 }
 
-#promo .wrapper {
+.promo .wrapper {
     background: var(--gray-ultralight);
     padding: 20px 50px;
     border-radius: 15px;
@@ -11,14 +11,14 @@
     grid-gap: 50px;
 }
 
-#promo h4{
+.promo h4{
     /* font-weight: 500; */
     color: var(--green);
     margin: 0 0 10px;
 }
 
 @media(max-width:776px) {
-    #promo .wrapper{
+    .promo .wrapper{
         grid-template-columns: 1fr;
         grid-gap: 20px;
         padding: 20px;

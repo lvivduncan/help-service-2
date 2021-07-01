@@ -1,0 +1,62 @@
+
+.columns{
+    margin: 60px 0;
+}
+
+.columns h2{
+    text-align: center;
+    margin: 0 0 30px;
+}
+
+.columns ul{
+    margin: 30px 0;
+    columns: 4;
+    column-gap: 30px;
+}
+
+@media(max-width:996px) {
+    .columns ul{
+        columns: 3;
+    }
+}
+
+@media(max-width:776px) {
+    .columns ul{
+        columns: 2;
+    }
+}
+
+@media(max-width:450px) {
+    .columns ul{
+        columns: 1;
+        text-align: center;
+    }
+}
+
+.columns li{
+    display: block;
+    margin: 10px 0;
+}
+
+.columns li h3{
+    font-size: 15px;
+    letter-spacing: 1px;
+    font-weight: 500;
+}
+
+.columns li h3 a{
+    display: inline-block;
+    margin: 5px 0;
+    color: var(--gray-ultralight);
+    padding: 5px 10px;
+    background: var(--green-ultralight);
+}
+
+.columns li a{
+    transition: .5s;
+    display: block;
+}
+
+.columns li a:hover{
+    transform: translateX(5px);
+}

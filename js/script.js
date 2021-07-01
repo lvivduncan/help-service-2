@@ -487,7 +487,9 @@ const lightboxDescription = GLightbox({
     });
 }
 
-// 28-06-2021
+/**
+ * scroll comments
+ */
 {
     // scroll
     const scroll = document.querySelectorAll('#feedback .levus-horizontal-scroll');

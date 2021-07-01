@@ -15,6 +15,12 @@
     margin: 30px 0 30px 60px;
 }
 
+@media(max-width:540px) {   
+    .text-article ul{
+        margin: 30px 0 30px 0;
+    }
+}
+
 .text-article li{
     margin: 30px 0;
     display: block;
@@ -22,6 +28,12 @@
     padding: 0 100px 0 60px;
     color: var(--gray-light);
     transition: .5s;
+}
+
+@media(max-width:540px) {   
+    .text-article li{
+        padding: 0 0 0 40px;
+    }
 }
 
 .text-article li:hover{
@@ -43,4 +55,24 @@
 
 .text-article li:hover::before{
     transform: scale(1.2);
+}
+
+/* таблиця не адаптована */
+.text-article table{
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.text-article tr,
+.text-article td,
+.text-article th{
+    padding: 10px 5px;
+    border-bottom: 1px solid var(--green-light);
+    text-align: left;
+}
+
+.text-article th,
+.text-article thead{
+    color: var(--green);
+    background: var(--green-superultralight);
 }

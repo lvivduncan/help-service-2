@@ -46,6 +46,15 @@
 /* Відстежити замовлення */
 @import url('./track.css');
 
+/* Виклик майстра */
+@import url('./callback.css');
+
+/* колонки */
+@import url('./columns.css');
+
+/* виробники */
+@import url('./logos.css');
+
 /**/
 @import url('./levus-tooltip.css');
 

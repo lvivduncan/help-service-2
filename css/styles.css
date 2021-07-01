@@ -31,6 +31,12 @@
 /* одинокий блок зі заголовком, текстом та фото */
 @import url('./single-article.css');
 
+/* Кожен клієнт сервісного центру "Help" отримує: */
+@import url('./bonus.css');
+
+/* одинокий блок без фото */
+@import url('./lead.css');
+
 /**/
 @import url('./levus-tooltip.css');
 
